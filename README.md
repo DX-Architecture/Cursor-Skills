@@ -1,6 +1,6 @@
 # DX-Architecture
 
-Public repository of Cursor Agent Skills for DX Architecture workflows.
+Public catalog of Cursor Agent Skills for DX Architecture workflows. Open this repository in Cursor to use skills automatically, or copy individual skill folders into another project.
 
 ## Skills
 
@@ -8,19 +8,32 @@ Public repository of Cursor Agent Skills for DX Architecture workflows.
 | --- | --- |
 | [`genstudio-email-prompts`](.cursor/skills/genstudio-email-prompts/) | Craft Adobe GenStudio for Performance Marketing prompts for Red Hat email experiences (single-product and multipod). |
 
+## Repository structure
+
+```text
+.cursor/skills/
+  <skill-name>/
+    SKILL.md          # required — instructions + frontmatter
+    reference.md      # optional
+    examples.md       # optional
+    scripts/          # optional
+CONTRIBUTING.md       # how to add or improve skills
+.github/              # PR and issue templates
+```
+
+Each skill is a self-contained folder under `.cursor/skills/`. Contributors add new skills by creating a new folder and opening a PR.
+
 ## Using skills in Cursor
 
 ### In this project
 
-Skills in `.cursor/skills/` are available automatically when you open this repository in Cursor. Invoke with:
+Skills in `.cursor/skills/` load when you open this repository in Cursor. Invoke with:
 
 ```text
 /genstudio-email-prompts
 ```
 
 ### Install into another project
-
-Copy the skill folder into that project's `.cursor/skills/` directory:
 
 ```bash
 mkdir -p /path/to/project/.cursor/skills
@@ -34,10 +47,13 @@ mkdir -p ~/.cursor/skills
 cp -R .cursor/skills/genstudio-email-prompts ~/.cursor/skills/
 ```
 
-## Adding a skill
+## Contributing
 
-1. Create `.cursor/skills/<skill-name>/SKILL.md` with YAML frontmatter (`name`, `description`).
-2. Add optional supporting files (`reference.md`, `examples.md`, scripts).
-3. Keep `SKILL.md` concise; put deep detail in linked files.
+We welcome new skills and improvements.
 
-See Cursor’s [Agent Skills](https://cursor.com/docs) guidance for authoring tips.
+1. Read [CONTRIBUTING.md](CONTRIBUTING.md)
+2. Add your skill under `.cursor/skills/<skill-name>/`
+3. Update the Skills table above
+4. Open a pull request
+
+To discuss an idea first, open a **New skill proposal** issue.
