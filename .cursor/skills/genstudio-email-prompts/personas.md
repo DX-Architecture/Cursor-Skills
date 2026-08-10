@@ -1,6 +1,6 @@
 # GenStudio persona repository
 
-Source: `GenStudio persona repository.pdf`  
+Source: `Red Hat Style and Brand/GenStudio persona repository.pdf`  
 **WIP — does not represent all personas in GenStudio.**
 
 Use these when choosing GenStudio Persona Parameters and when shaping prompt tone/messaging.

@@ -117,4 +117,4 @@ Preserve ®/™ when the user supplies them (e.g. `Red Hat® Enterprise Linux®`
 - Adobe GenStudio rules: [reference.md](reference.md)
 - Examples: [examples.md](examples.md)
 
-Repo sources: `Red Hat_Channel Guidelines.pdf`, `GenStudio persona repository.pdf`, `CY6Q1 GenStudio Testing - Prompt exampels.pdf`
+Source PDFs (local, gitignored): `Red Hat Style and Brand/Red Hat_Channel Guidelines.pdf`, `Red Hat Style and Brand/GenStudio persona repository.pdf`, `Red Hat Style and Brand/CY6Q1 GenStudio Testing - Prompt exampels.pdf`

@@ -1,6 +1,6 @@
 # Red Hat email channel guidelines
 
-Source: `Red Hat_Channel Guidelines.pdf` in this repo.
+Source: `Red Hat Style and Brand/Red Hat_Channel Guidelines.pdf`
 
 ## General
 

@@ -4,3 +4,6 @@
 .env.*
 !.env.example
 .cursor/mcp.json
+
+# Local Red Hat brand reference materials (do not publish)
+Red Hat Style and Brand/

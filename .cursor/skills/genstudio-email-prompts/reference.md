@@ -70,9 +70,11 @@ From Adobe’s agent prompting guidance, apply to GenStudio briefs:
 - [ ] Channel character limits respected ([channel-guidelines.md](channel-guidelines.md))
 - [ ] Ready to iterate after first generation
 
-## Red Hat repo sources
+## Red Hat source PDFs
 
-- `Red Hat_Channel Guidelines.pdf` — email style + character limits
-- `GenStudio persona repository.pdf` — Champion, Technical Practitioner / Architect, Developer
-- `CY6Q1 GenStudio Testing - Prompt exampels.pdf` — validated multipod/single-pod prompt patterns
-- `Character Count_Template.pdf` — supplemental module counts (excluding spaces)
+Located in the local **Red Hat Style and Brand/** folder (gitignored; not published):
+
+- `Red Hat Style and Brand/Red Hat_Channel Guidelines.pdf` — email style + character limits
+- `Red Hat Style and Brand/GenStudio persona repository.pdf` — Champion, Technical Practitioner / Architect, Developer
+- `Red Hat Style and Brand/CY6Q1 GenStudio Testing - Prompt exampels.pdf` — validated multipod/single-pod prompt patterns
+- `Red Hat Style and Brand/Character Count_Template.pdf` — supplemental module counts (excluding spaces)
