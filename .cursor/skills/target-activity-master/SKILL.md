@@ -30,7 +30,8 @@ description: >-
 4. **Always exclude** permanent dummy IDs in `live_windows.EXCLUDED_ACTIVITY_IDS` (currently `372957` — CP Homepage Adobe Target Ready).
 5. Prefer `period-report.py` + `export-master-csv.py` (shared logic in `live_windows.py`).
 6. Status column: map API `approved` → `live`; `deactivated` or `saved` (when included) → `deactivated` (UI Inactive).
-7. After pull + combine, run **Post-collection cleanup** (below). Do not hardcode activity IDs — detect from row patterns.
+7. **Domains column:** always replace `redhat.com; www.redhat.com` with only `redhat.com` (same pair in either order, with normal spacing around `;`). Leave other domain lists unchanged.
+8. After pull + combine, run **Post-collection cleanup** (below). Do not hardcode activity IDs — detect from row patterns.
 
 ## Date examples
 
@@ -67,9 +68,18 @@ Run after the live-in-period pull and combine. Key = **Activity ID + Experience 
 - Set `Mbox` to exactly `Multi-mbox`
 - Keep other columns from any representative row in the group
 
+### Domains
+
+**Always** rewrite the Domains cell when it is exactly the redhat.com + www.redhat.com pair:
+- `redhat.com; www.redhat.com` → `redhat.com`
+- `www.redhat.com; redhat.com` → `redhat.com`
+
+Do not drop other domains from longer lists unless the entire cell is only that pair.
+
 ### Order
 
 1. Apply name/ID exclusions (if not already applied).
-2. Apply **paused and reactivated** consolidation.
-3. Apply **multi-mbox** consolidation.
-4. Write the cleaned master CSV.
+2. Normalize **Domains** (`redhat.com; www.redhat.com` → `redhat.com`).
+3. Apply **paused and reactivated** consolidation.
+4. Apply **multi-mbox** consolidation.
+5. Write the cleaned master CSV.
