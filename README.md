@@ -7,6 +7,7 @@ Public catalog of Cursor Agent Skills for DX Architecture workflows. Open this r
 | Skill | Description |
 | --- | --- |
 | [`genstudio-email-prompts`](.cursor/skills/genstudio-email-prompts/) | Craft Adobe GenStudio for Performance Marketing prompts for Red Hat email experiences (single-product and multipod). |
+| [`target-activity-master`](.cursor/skills/target-activity-master/) | Format and clean Adobe Target MCP activity master CSVs (live-in-period inclusion, exclusions, date formatting, paused/reactivated and multi-mbox cleanup). |
 
 ## Repository structure
 
