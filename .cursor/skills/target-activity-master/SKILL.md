@@ -89,19 +89,38 @@ Adobe API `type` is often `xt` even for Recs activities. Classify as **Recs** wh
 
 Implemented in `export-master-csv.py` → `has_recommendations_signals()` and `classify_activity_type()`.
 
-### Google Sheet enrichment (V2 Jan-July 2026)
+### Google Sheet enrichment (V2 tabs)
+
+Use one tab per period, e.g. `V2 Jan-July 2026`, `V2 August 2026`. **Create the tab** in the spreadsheet before the first push if it does not exist.
 
 | Column | Field | Notes |
 |--------|-------|-------|
 | S | Activity Type | **Active** — XT, Recs, Event, Auto Target, AB Test, Auto Allocate |
 | P | Events/AB Tests | **Deprecated** — do not read or write; replaced by Activity Type (S) |
 | U | events | **Active** — `True` / `False` from Activity Name keywords (`Events`, `Summit`, `Summit Connect`) |
-| R | UX | From mbox skill + enrichment; do not overwrite populated cells |
+| R | UX | From **mbox-translation** skill; do not overwrite populated cells |
 | T | Multi UX (True or False) | `True` when UX is Multi-UX label or activity uses >1 unique mbox |
 
-- Write **Activity Type** only to column S (`update-v2-activity-type.py`). Do not backfill **Sub-Type** (F) or **Events/AB Tests** (P).
-- Write **events** only to column U (`update-v2-events.py`). **Never modify column P.**
-- Use `classify_activity_type(act, detail, stage=…)` with **Stage** (O) when present for Event in Activity Type.
+- Write **Activity Type** to column S on CSV push (`push-v2-sheet-from-csv.py`) or `update-v2-activity-type.py`.
+- Write **events** only to column U (`update-v2-events.py --tab "…"`). **Never modify column P.**
+- Fill blank **UX** from mbox (`update-v2-ux-from-mbox.py --tab "…"`).
+- Set **Multi UX** (`update-v2-multi-ux.py --tab "…"`).
+- All enrichment scripts accept `--tab`; default tab varies by script — always pass `--tab` for monthly runs.
+- Large sheet writes: `push-v2-sheet-from-csv.py` batches updates (~30 rows) to avoid Windows command-line limits.
+
+### Monthly pipeline
+
+For a single calendar month (example: August 2026):
+
+1. `period-report.py --year 2026 --month 8`
+2. `export-master-csv.py --year 2026 --month 8`
+3. `post-collection-cleanup.py august-2026-activities-master-list.csv`
+4. `push-v2-sheet-from-csv.py --csv … --tab "V2 August 2026"`
+5. `update-v2-ux-from-mbox.py --tab "V2 August 2026"`
+6. `update-v2-multi-ux.py --tab "V2 August 2026"`
+7. `update-v2-events.py --tab "V2 August 2026"`
+
+Or orchestrate with `run-august-2026-pipeline.py` (`--skip-pull` when JSON/CSV already exist).
 
 ## Post-collection cleanup
 
