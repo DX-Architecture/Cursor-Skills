@@ -7,6 +7,8 @@ description: >-
   Inclusion is based on revision Activated/Deactivated windows (live at any
   point in the period), not flaky API state alone. After pull/combine, run
   post-collection cleanup for paused/reactivated and multi-mbox consolidation.
+  Derives a single Activity Type column (Event, XT, Recs, Auto Target, AB Test,
+  Auto Allocate) from Target API data plus optional enrichment Stage.
   Use when exporting, combining, enriching, or cleaning Target activity master lists.
 ---
 
@@ -31,7 +33,8 @@ description: >-
 5. Prefer `period-report.py` + `export-master-csv.py` (shared logic in `live_windows.py`).
 6. Status column: map API `approved` → `live`; `deactivated` or `saved` (when included) → `deactivated` (UI Inactive).
 7. **Domains column:** always replace `redhat.com; www.redhat.com` with only `redhat.com` (same pair in either order, with normal spacing around `;`). Leave other domain lists unchanged.
-8. After pull + combine, run **Post-collection cleanup** (below). Do not hardcode activity IDs — detect from row patterns.
+8. **Activity Type column:** derive directly from Target API data using the rules below. Do **not** emit separate `Sub-Type` or `Events/AB Tests` columns.
+9. After pull + combine, run **Post-collection cleanup** (below). Do not hardcode activity IDs — detect from row patterns.
 
 ## Date examples
 
@@ -46,6 +49,53 @@ description: >-
 - Name markers (case-insensitive): `[Debug]`, `[Debug JSON RECS]`, `[QA]`, `[No-Op]`
 - Dummy activity ID `372957` (`CP Homepage Adobe Target Ready`)
 - Do not include excluded activities in master lists, reports, or combined files.
+
+## Activity Type
+
+Single classification column. Allowed values:
+
+| Activity Type | When to use |
+|---------------|-------------|
+| `Event` | Enrichment **Stage** is `Event` (see below) |
+| `Recs` | Recommendations signals match |
+| `XT` | API `type` is `xt` and not Recs |
+| `Auto Target` | API `type` is `abt` with `optimizeByExperience` |
+| `AB Test` | API `type` is `ab`, or `abt` with explicit experiences (not Auto Target) |
+| `Auto Allocate` | API `type` is `auto_allocate` |
+| *(blank)* | Unmapped types (`Unknown`, Automated Personalization, ABT unspecified, etc.) |
+
+**Precedence** (first match wins):
+
+1. **Event** — enrichment join **Stage** = `Event` (from `redhat_activities_experiences_4`, matched on Activity ID + Experience ID). Replaces the former `Events/AB Tests` Event override.
+2. **Recs** — `has_recommendations_signals()` matches (see below).
+3. **Auto Allocate** — API `type` = `auto_allocate`.
+4. **AB Test** — API `type` = `ab`, or `abt` with `explicitExperiences` (and not Auto Target).
+5. **Auto Target** — API `type` = `abt` with `optimizeByExperience` in `targetedExperience.explicit`.
+6. **XT** — API `type` = `xt`.
+7. Else leave **blank**.
+
+Requires full activity detail from `get_activity` for `abt` discrimination (Auto Target vs AB Test). Monthly JSON alone is not sufficient for `abt` rows.
+
+### Recs detection
+
+Adobe API `type` is often `xt` even for Recs activities. Classify as **Recs** when any signal matches:
+
+| Signal | Example |
+|--------|---------|
+| Activity name contains `recommend` or `recs` | `... \| Recs`, `... Recommendations` |
+| Mbox name contains `recs` | `myRH-trainingRecs`, `myRH-eventsRecs` |
+| Experience name contains `recommend` or `recs` | `RHEL recommendations`, experience named `Recs` |
+| Detail payload contains recommendation criteria | `recommendationCriteria`, `criteriaId` |
+
+Implemented in `export-master-csv.py` → `has_recommendations_signals()` and `classify_activity_type()`.
+
+### Google Sheet enrichment (V2 Jan-July 2026)
+
+- Write **Activity Type** only (column S). Do not backfill `Sub-Type` (F) or `Events/AB Tests` (P).
+- Use `classify_activity_type(act, detail, stage=…)` with **Stage** from column O when present.
+- For sheet refresh without per-activity `get_activity` calls: keep Activity Type baseline from the master CSV (by Activity ID), apply Recs override from monthly JSON, and apply Event override when Stage = `Event`.
+
+Run `adobe-target-mcp/update-v2-activity-type.py` (writes column S via `gws`).
 
 ## Post-collection cleanup
 
