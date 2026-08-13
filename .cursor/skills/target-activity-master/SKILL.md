@@ -8,7 +8,8 @@ description: >-
   point in the period), not flaky API state alone. After pull/combine, run
   post-collection cleanup for paused/reactivated and multi-mbox consolidation.
   Derives a single Activity Type column (Event, XT, Recs, Auto Target, AB Test,
-  Auto Allocate) from Target API data plus optional enrichment Stage.
+  Auto Allocate) from Target API data plus optional enrichment Stage. Derives
+  Product from Experience Name (or Activity Name) using contains rules.
   Use when exporting, combining, enriching, or cleaning Target activity master lists.
 ---
 
@@ -33,8 +34,27 @@ description: >-
 5. Prefer `period-report.py` + `export-master-csv.py` (shared logic in `live_windows.py`).
 6. Status column: map API `approved` → `live`; `deactivated` or `saved` (when included) → `deactivated` (UI Inactive).
 7. **Domains column:** always replace `redhat.com; www.redhat.com` with only `redhat.com` (same pair in either order, with normal spacing around `;`). Leave other domain lists unchanged.
-8. **Activity Type column:** derive directly from Target API data using the rules below. Do **not** emit separate `Sub-Type` or `Events/AB Tests` columns.
+8. **Activity Type column:** derive directly from Target API data using the rules below.
 9. After pull + combine, run **Post-collection cleanup** (below). Do not hardcode activity IDs — detect from row patterns.
+
+## Master CSV columns
+
+Emit **only** these columns, in this order. Do **not** include `Sub-Type`, `Reporting Suite`, or `Events/AB Tests` — those are retired.
+
+| Column | Notes |
+|--------|-------|
+| Correlation ID | |
+| Activity ID | |
+| Activity Name | |
+| Experience ID | |
+| Experience Name | |
+| Activity Type | XT, Recs, Event, Auto Target, AB Test, Auto Allocate |
+| Priority | |
+| Status | `live` or `deactivated` |
+| Date Activated | yyyy-mm-dd |
+| Deactivated Date | yyyy-mm-dd |
+| Domains | |
+| Mbox | |
 
 ## Date examples
 
@@ -66,7 +86,7 @@ Single classification column. Allowed values:
 
 **Precedence** (first match wins):
 
-1. **Event** — enrichment join **Stage** = `Event` (from `redhat_activities_experiences_4`, matched on Activity ID + Experience ID). Replaces the former `Events/AB Tests` Event override.
+1. **Event** — enrichment join **Stage** = `Event` (from `redhat_activities_experiences_4`, matched on Activity ID + Experience ID).
 2. **Recs** — `has_recommendations_signals()` matches (see below).
 3. **Auto Allocate** — API `type` = `auto_allocate`.
 4. **AB Test** — API `type` = `ab`, or `abt` with `explicitExperiences` (and not Auto Target).
@@ -89,22 +109,62 @@ Adobe API `type` is often `xt` even for Recs activities. Classify as **Recs** wh
 
 Implemented in `export-master-csv.py` → `has_recommendations_signals()` and `classify_activity_type()`.
 
+## Product
+
+Derive **Product** for the Google Sheet (column M) from **Experience Name** by default. Use **Activity Name** only when Experience Name is too generic. Implemented in `update-v2-product.py` (`--from experience-name` or `--from activity-name`).
+
+**Precedence** (first match wins, case-insensitive contains unless noted):
+
+| Product | Name contains |
+|---------|----------------|
+| RHEL | `rhel`, `infrastructure` |
+| Openshift | `openshift`, `virtualization`, `app-development`, `OVE` (whole word only) |
+| Ansible | `ansible`, `automation` |
+| AI | `rhoai`, `rhai`, `ai infrence`, `ai inference`, ` ai `, `ai - ` |
+
+- Leave **blank** when no rule matches (cross-portfolio, geo, generic experiences).
+- `OVE` must match as a token (`\bove\b`) so it does not match `Discover`, `Remove`, or `Override`.
+- When both Activity and Experience names are available, prefer **Experience Name** — it is more product-specific.
+
+Reference implementation: `scripts/product_from_name.py`.
+
 ### Google Sheet enrichment (V2 tabs)
 
 Use one tab per period, e.g. `V2 Jan-July 2026`, `V2 August 2026`. **Create the tab** in the spreadsheet before the first push if it does not exist.
 
-| Column | Field | Notes |
-|--------|-------|-------|
-| S | Activity Type | **Active** — XT, Recs, Event, Auto Target, AB Test, Auto Allocate |
-| P | Events/AB Tests | **Deprecated** — do not read or write; replaced by Activity Type (S) |
-| U | events | **Active** — `True` / `False` from Activity Name keywords (`Events`, `Summit`, `Summit Connect`) |
-| R | UX | From **mbox-translation** skill; do not overwrite populated cells |
-| T | Multi UX (True or False) | `True` when UX is Multi-UX label or activity uses >1 unique mbox |
+**Base columns (A–L)** — from master CSV push (`push-v2-sheet-from-csv.py`):
 
-- Write **Activity Type** to column S on CSV push (`push-v2-sheet-from-csv.py`) or `update-v2-activity-type.py`.
-- Write **events** only to column U (`update-v2-events.py --tab "…"`). **Never modify column P.**
-- Fill blank **UX** from mbox (`update-v2-ux-from-mbox.py --tab "…"`).
-- Set **Multi UX** (`update-v2-multi-ux.py --tab "…"`).
+| Col | Field |
+|-----|-------|
+| A | Correlation ID |
+| B | Activity ID |
+| C | Activity Name |
+| D | Experience ID |
+| E | Experience Name |
+| F | Activity Type |
+| G | Priority |
+| H | Status |
+| I | Date Activated |
+| J | Deactivated Date |
+| K | Domains |
+| L | Mbox |
+
+**Enrichment columns (M–R)** — filled by enrichment scripts:
+
+| Col | Field | Notes |
+|-----|-------|-------|
+| M | Product | From Experience Name contains rules (`update-v2-product.py`) |
+| N | Stage | From enrichment join; `Event` drives Activity Type = Event |
+| O | Translated? | From enrichment join |
+| P | UX | From **mbox-translation** skill; do not overwrite populated cells |
+| Q | Multi UX (True or False) | `True` when UX is Multi-UX label or activity uses >1 unique mbox |
+| R | events | `True` / `False` from Activity Name keywords (`Events`, `Summit`, `Summit Connect`) |
+
+- Write **Product** (M) from name rules (`update-v2-product.py --tab "…" --from experience-name`).
+- Write **Activity Type** to column F on CSV push, or backfill with `update-v2-activity-type.py`.
+- Fill blank **UX** (P) from mbox (`update-v2-ux-from-mbox.py --tab "…"`).
+- Set **Multi UX** (Q) (`update-v2-multi-ux.py --tab "…"`).
+- Write **events** (R) only (`update-v2-events.py --tab "…"`).
 - All enrichment scripts accept `--tab`; default tab varies by script — always pass `--tab` for monthly runs.
 - Large sheet writes: `push-v2-sheet-from-csv.py` batches updates (~30 rows) to avoid Windows command-line limits.
 
@@ -116,9 +176,10 @@ For a single calendar month (example: August 2026):
 2. `export-master-csv.py --year 2026 --month 8`
 3. `post-collection-cleanup.py august-2026-activities-master-list.csv`
 4. `push-v2-sheet-from-csv.py --csv … --tab "V2 August 2026"`
-5. `update-v2-ux-from-mbox.py --tab "V2 August 2026"`
-6. `update-v2-multi-ux.py --tab "V2 August 2026"`
-7. `update-v2-events.py --tab "V2 August 2026"`
+5. `update-v2-product.py --tab "V2 August 2026" --from experience-name`
+6. `update-v2-ux-from-mbox.py --tab "V2 August 2026"`
+7. `update-v2-multi-ux.py --tab "V2 August 2026"`
+8. `update-v2-events.py --tab "V2 August 2026"`
 
 Or orchestrate with `run-august-2026-pipeline.py` (`--skip-pull` when JSON/CSV already exist).
 
