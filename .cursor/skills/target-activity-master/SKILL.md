@@ -91,11 +91,17 @@ Implemented in `export-master-csv.py` → `has_recommendations_signals()` and `c
 
 ### Google Sheet enrichment (V2 Jan-July 2026)
 
-- Write **Activity Type** only (column S). Do not backfill `Sub-Type` (F) or `Events/AB Tests` (P).
-- Use `classify_activity_type(act, detail, stage=…)` with **Stage** from column O when present.
-- For sheet refresh without per-activity `get_activity` calls: keep Activity Type baseline from the master CSV (by Activity ID), apply Recs override from monthly JSON, and apply Event override when Stage = `Event`.
+| Column | Field | Notes |
+|--------|-------|-------|
+| S | Activity Type | **Active** — XT, Recs, Event, Auto Target, AB Test, Auto Allocate |
+| P | Events/AB Tests | **Deprecated** — do not read or write; replaced by Activity Type (S) |
+| U | events | **Active** — `True` / `False` from Activity Name keywords (`Events`, `Summit`, `Summit Connect`) |
+| R | UX | From mbox skill + enrichment; do not overwrite populated cells |
+| T | Multi UX (True or False) | `True` when UX is Multi-UX label or activity uses >1 unique mbox |
 
-Run `adobe-target-mcp/update-v2-activity-type.py` (writes column S via `gws`).
+- Write **Activity Type** only to column S (`update-v2-activity-type.py`). Do not backfill **Sub-Type** (F) or **Events/AB Tests** (P).
+- Write **events** only to column U (`update-v2-events.py`). **Never modify column P.**
+- Use `classify_activity_type(act, detail, stage=…)` with **Stage** (O) when present for Event in Activity Type.
 
 ## Post-collection cleanup
 
