@@ -9,7 +9,8 @@ description: >-
   post-collection cleanup for paused/reactivated and multi-mbox consolidation.
   Derives a single Activity Type column (Event, XT, Recs, Auto Target, AB Test,
   Auto Allocate) from Target API data plus optional enrichment Stage. Derives
-  Product from Experience Name (or Activity Name) using contains rules.
+  Derives Product from Experience Name (or Activity Name) and Stage from events plus
+  Activity Name (with separate partner stage taxonomy).
   Use when exporting, combining, enriching, or cleaning Target activity master lists.
 ---
 
@@ -128,6 +129,52 @@ Derive **Product** for the Google Sheet (column M) from **Experience Name** by d
 
 Reference implementation: `scripts/product_from_name.py`.
 
+## Stage
+
+Derive **Stage** for the Google Sheet (column N) from the **`events`** column and **Activity Name**. Implemented in `update-v2-stage.py`. Run `update-v2-events.py` first.
+
+**Precedence** (first match wins):
+
+1. `events` = `True` → **Event**
+2. Known **partner** activity overrides (by Activity ID or PZN)
+3. Partner name contains rules (partner experiences only)
+4. Customer lifecycle name contains rules
+
+### Customer lifecycle stages (Activity Name)
+
+| Stage | Name contains |
+|-------|----------------|
+| Discover | `discover` |
+| Learn | `learn` |
+| Evaluate | `evaluate` |
+| Adoption | `adopt` |
+| Expand | `upsell`, `upsale`, `cross sell`, `cross-sell` |
+
+### Partner stages
+
+Partner experiences use a **different** stage taxonomy. Detect partner rows when **Domains** includes `connect.redhat.com`, or Activity Name includes `to-partner`, `partner program`, or `connect - red hat partner`.
+
+| Stage | Assignment |
+|-------|------------|
+| Interest | Name contains `interest` |
+| Conversion | Name contains `conversion` |
+| Onboarding | Name contains `onboarding` |
+| Growth experiences | Name contains `to-partner`, `growth experience`; or PZN2867751 / Activity ID `643220` |
+| Enablement & readiness motions | Name contains `enablement`, `readiness`, `partner program`, `enablement and readiness motions`; or PZN1387300 / Activity ID `582156` |
+
+**Do not apply customer lifecycle stages** (Discover, Learn, etc.) to partner rows.
+
+### Partner activities — ask the user
+
+There is **no reliable dynamic rule** for all partner-tagged activities. When you find partner rows that are **not** covered by a known override or contains rule above:
+
+1. **Stop** and list the unmatched activities (Activity ID, Activity Name, Domains).
+2. **Ask the user** which partner Stage each should receive.
+3. Add explicit Activity ID / PZN overrides to `stage_from_activity_name.py` only after the user confirms.
+4. Do **not** guess or leave partner rows on customer stages.
+
+Reference implementation: `stage_from_activity_name.py` (local `adobe-target-mcp` project).
+
 ### Google Sheet enrichment (V2 tabs)
 
 Use one tab per period, e.g. `V2 Jan-July 2026`, `V2 August 2026`. **Create the tab** in the spreadsheet before the first push if it does not exist.
@@ -154,13 +201,14 @@ Use one tab per period, e.g. `V2 Jan-July 2026`, `V2 August 2026`. **Create the 
 | Col | Field | Notes |
 |-----|-------|-------|
 | M | Product | From Experience Name contains rules (`update-v2-product.py`) |
-| N | Stage | From enrichment join; `Event` drives Activity Type = Event |
+| N | Stage | From `events` + Activity Name rules; partner overrides (`update-v2-stage.py`) |
 | O | Translated? | From enrichment join |
 | P | UX | From **mbox-translation** skill; do not overwrite populated cells |
 | Q | Multi UX (True or False) | `True` when UX is Multi-UX label or activity uses >1 unique mbox |
 | R | events | `True` / `False` from Activity Name keywords (`Events`, `Summit`, `Summit Connect`) |
 
 - Write **Product** (M) from name rules (`update-v2-product.py --tab "…" --from experience-name`).
+- Write **Stage** (N) after events (`update-v2-stage.py --tab "…"`).
 - Write **Activity Type** to column F on CSV push, or backfill with `update-v2-activity-type.py`.
 - Fill blank **UX** (P) from mbox (`update-v2-ux-from-mbox.py --tab "…"`).
 - Set **Multi UX** (Q) (`update-v2-multi-ux.py --tab "…"`).
@@ -177,9 +225,10 @@ For a single calendar month (example: August 2026):
 3. `post-collection-cleanup.py august-2026-activities-master-list.csv`
 4. `push-v2-sheet-from-csv.py --csv … --tab "V2 August 2026"`
 5. `update-v2-product.py --tab "V2 August 2026" --from experience-name`
-6. `update-v2-ux-from-mbox.py --tab "V2 August 2026"`
-7. `update-v2-multi-ux.py --tab "V2 August 2026"`
-8. `update-v2-events.py --tab "V2 August 2026"`
+6. `update-v2-events.py --tab "V2 August 2026"`
+7. `update-v2-stage.py --tab "V2 August 2026"`
+8. `update-v2-ux-from-mbox.py --tab "V2 August 2026"`
+9. `update-v2-multi-ux.py --tab "V2 August 2026"`
 
 Or orchestrate with `run-august-2026-pipeline.py` (`--skip-pull` when JSON/CSV already exist).
 
