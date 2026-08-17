@@ -6,6 +6,7 @@ Public catalog of Cursor Agent Skills for DX Architecture workflows. Open this r
 
 | Skill | Description |
 | --- | --- |
+| [`email-character-count`](.cursor/skills/email-character-count/) | Check email copy character counts against section limits (subject line, preheader, headings, body, CTAs). |
 | [`genstudio-email-prompts`](.cursor/skills/genstudio-email-prompts/) | Craft Adobe GenStudio for Performance Marketing prompts for Red Hat email experiences (single-product and multipod). |
 
 ## Repository structure
