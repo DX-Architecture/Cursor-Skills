@@ -6,6 +6,7 @@ Public catalog of Cursor Agent Skills for DX Architecture workflows. Open this r
 
 | Skill | Description |
 | --- | --- |
+| [`email-character-count`](.cursor/skills/email-character-count/) | Check email copy character counts against section limits (subject line, preheader, headings, body, CTAs). |
 | [`genstudio-email-prompts`](.cursor/skills/genstudio-email-prompts/) | Craft Adobe GenStudio for Performance Marketing prompts for Red Hat email experiences (single-product and multipod). |
 | [`mbox-translation`](.cursor/skills/mbox-translation/) | Map Adobe Target mbox technical names to RHDC location labels and UX categories for master CSV enrichment. |
 | [`target-activity-master`](.cursor/skills/target-activity-master/) | Format and clean Adobe Target MCP activity master CSVs (live-in-period inclusion, exclusions, date formatting, Activity Type, Product, paused/reactivated and multi-mbox cleanup, Google Sheet enrichment). |
