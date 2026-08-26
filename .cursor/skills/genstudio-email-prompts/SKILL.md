@@ -19,7 +19,7 @@ Use only these product guidelines unless the user specifies another. Full descri
 
 | Product | Notes |
 |---------|--------|
-| **Red Hat Enterprise Linux** | Hybrid OS foundation; lead with “Why RHEL,” Lightspeed, hybrid consistency |
+| **Red Hat Enterprise Linux** | Hybrid foundation; Why RHEL (not why Linux); pick one value angle per pod; cite proof points in body |
 | **Red Hat OpenShift Platform Plus** | Prefer this name (not “OpenShift” alone); hybrid app platform at scale |
 | **Red Hat Developer program** | No-cost membership; peer-to-peer; Join / Start building CTAs |
 | **Red Hat product trial** | No-cost, temporary, full-subscription-value evaluation—not production |
