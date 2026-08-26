@@ -75,6 +75,6 @@ From Adobe’s agent prompting guidance, apply to GenStudio briefs:
 Located in the local **Red Hat Style and Brand/** folder (gitignored; not published):
 
 - `Red Hat Style and Brand/Red Hat_Channel Guidelines.pdf` — email style + character limits
-- `Red Hat Style and Brand/GenStudio persona repository.pdf` — Champion, Technical Practitioner / Architect, Developer
+- [GenStudio Personas_WIP](https://docs.google.com/document/d/1Zbqq5GNc5SZ9wwdA6sq8PMuLaeYA0R4i-NsxZ66k5TA/edit?usp=sharing) — Champion, Technical Practitioner / Architect, Developer (see [personas.md](personas.md))
 - `Red Hat Style and Brand/CY6Q1 GenStudio Testing - Prompt exampels.pdf` — validated multipod/single-pod prompt patterns
 - `Red Hat Style and Brand/Character Count_Template.pdf` — supplemental module counts (excluding spaces)
