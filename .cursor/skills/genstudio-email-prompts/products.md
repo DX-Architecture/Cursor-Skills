@@ -115,3 +115,34 @@ User briefs saying “trial,” “free trial,” “product trial,” or “eva
 ### Naming aliases
 
 User briefs saying “OpenShift” or “Red Hat OpenShift” usually map to **Red Hat OpenShift Platform Plus** unless they name a different OpenShift edition.
+
+---
+
+## Red Hat Ansible Automation Platform
+
+**Description:** Red Hat® Ansible® Automation Platform is an enterprise IT automation solution for building, deploying, and managing end-to-end automation at scale. It is for organizations that need one consistent, security-focused foundation to automate across datacenter, hybrid cloud, network, and edge.
+
+**Value proposition:**
+
+- Gives organizations one platform to create, run, govern, and measure automation at scale, so teams move from fragmented scripts and homegrown tools to a consistent enterprise practice.
+- Lets teams automate across datacenter, hybrid cloud, network, and edge under a single set of processes and policies—without rebuilding for each domain.
+- Helps more people contribute to automation with certified content, development tools, and a self-service portal, while role-based access keeps work governed as adoption grows.
+- Responds to changing IT conditions with Event-Driven Ansible, turning monitoring alerts into consistent, repeatable actions instead of manual ticket work.
+- Speeds playbook creation and day-to-day platform operations with Red Hat Ansible Lightspeed, so teams close the automation skills gap without making AI the entire product story.
+- Improves return on investment, resilience, and compliance; an IDC Snapshot sponsored by Red Hat found a composite organization realized 668% three-year ROI, 8-month payback, and 61% less unplanned downtime.
+
+**Messaging preferences:**
+
+- Speak as the enterprise automation platform—not community Ansible, Ansible Core, or AWX—and lead with why Ansible Automation Platform, not why automation.
+- Lead with outcomes: less unplanned work, faster consistent operations, and visible ROI; use capabilities only to prove those outcomes.
+- Tell a hybrid story—automate across datacenter, cloud, network, and edge—and do not frame as cloud-only.
+- Use Red Hat Ansible Lightspeed when the topic is the automation skills gap, faster playbook creation, or simpler platform administration; do not make Lightspeed the entire product story.
+- Address one audience at a time: Champions need ROI and risk reduction; Technical Practitioners / Architects need governed execution at scale and Event-Driven responses; Developers need trusted content and faster playbooks.
+- Use **Red Hat Ansible Automation Platform** on first mention, then **Ansible Automation Platform**; never Ansible alone, AAP, or Ansible Tower as the product name.
+- Keep the tone clear, direct, and practical; avoid hype, unproven superlatives, and competitor attacks.
+- When proof points are used, attribute the IDC Snapshot sponsored by Red Hat (March 2024) and do not present the figures as guaranteed results for every customer.
+- In multipod emails, pair the platform with the product being automated (such as Red Hat Enterprise Linux or Red Hat OpenShift Platform Plus); Ansible Automation Platform is the automation layer, not a substitute for that product story.
+
+### Naming aliases
+
+User briefs saying “Ansible,” “AAP,” “Ansible Tower,” or “Ansible Automation” usually map to **Red Hat Ansible Automation Platform** unless they name community Ansible, Ansible Core, or AWX.

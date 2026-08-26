@@ -1,6 +1,6 @@
 ---
 name: genstudio-email-prompts
-description: Craft Adobe GenStudio for Performance Marketing prompts for Red Hat email experiences—single-product and multipod (Pod1, Pod2+) structured prompts with channel character limits, GenStudio personas, and product guidelines. Use when the user asks for GenStudio prompts, email marketing prompts, multipod emails, pod-based email copy, or GenStudio Create briefings for RHEL, OpenShift Platform Plus, Developer program, or product trial.
+description: Craft Adobe GenStudio for Performance Marketing prompts for Red Hat email experiences—single-product and multipod (Pod1, Pod2+) structured prompts with channel character limits, GenStudio personas, and product guidelines. Use when the user asks for GenStudio prompts, email marketing prompts, multipod emails, pod-based email copy, or GenStudio Create briefings for RHEL, OpenShift Platform Plus, Ansible Automation Platform, Developer program, or product trial.
 ---
 
 # GenStudio Email Prompts
@@ -21,10 +21,11 @@ Use only these product guidelines unless the user specifies another. Full descri
 |---------|--------|
 | **Red Hat Enterprise Linux** | Hybrid OS foundation; lead with why RHEL (not why Linux); hybrid consistency; Lightspeed for ops and security |
 | **Red Hat OpenShift Platform Plus** | Prefer this name (not “OpenShift” alone); hybrid app platform at scale |
+| **Red Hat Ansible Automation Platform** | Prefer this name (not “Ansible” or AAP); enterprise automation at scale; Lightspeed for skills gap, not the whole story |
 | **Red Hat Developer program** | No-cost membership; peer-to-peer; Join / Start building CTAs |
 | **Red Hat product trial** | No-cost, typically 60-day, full-subscription-value evaluation—not production; not the Developer program |
 
-Map each pod to one product/offer focus when possible. Briefs that say “OpenShift” map to **Red Hat OpenShift Platform Plus** unless another edition is named.
+Map each pod to one product/offer focus when possible. Briefs that say “OpenShift” map to **Red Hat OpenShift Platform Plus** unless another edition is named. Briefs that say “Ansible” map to **Red Hat Ansible Automation Platform** unless they name community Ansible, Ansible Core, or AWX.
 
 ## Personas (GenStudio Parameters)
 
