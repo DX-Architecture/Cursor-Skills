@@ -36,22 +36,34 @@ User briefs saying “RHEL” or “Linux” usually map to **Red Hat Enterprise
 
 ## Red Hat product trial
 
-**Description:** Red Hat product trials provide free, time-limited access to explore Red Hat solutions in your own environment. They help evaluate whether a product meets organizational needs before making a purchase commitment.
+**Description:** Red Hat product trials provide no-cost, time-limited access to evaluate Red Hat solutions with the same benefits as a paid subscription. They are for organizations and practitioners who need to test a product in their own environment before committing to a purchase—not for production use.
 
 **Value proposition:**
 
-- **Unmatched subscription-level access** — Full paid-subscription benefits including all software versions, critical patches, updates, and complete access to the Red Hat Customer Portal—unlike competitor trials that limit features or versions.
-- **Accelerated time-to-value** — Curated pathways, get-started guides, and documentation designed to help users quickly turn evaluation into action.
-- **Risk-free strategic evaluation** — IT teams can rigorously test technologies across AI, hybrid cloud, and automation—verifying real-world fit before committing enterprise budgets.
-- **Comprehensive skill development** — Specialized offerings like the 90-day learning subscription trial deliver structured, multimodal training paths that address skill gaps and prepare teams for emerging technologies.
+- Gives teams no-cost, time-limited access to the same software versions, patches, updates, and Red Hat Customer Portal included with a paid subscription—so evaluation reflects real subscription value, not a limited demo.
+- Lets organizations test a Red Hat product in their own environment—by download or in the cloud—and judge real-world fit before committing budget.
+- Puts a clock on evaluation (most trials last 60 days) so teams move from discovery to a decision instead of an open-ended experiment.
+- Shortens time to a useful evaluation with get-started guidance, documentation, and a My Trials dashboard that shows how to access the product after activation.
+- Creates a clear next step from evaluation to a paid subscription when the trial is a fit, including converting trial work to production instances.
+- Supports hands-on experience and certification prep as well as purchase evaluation—without treating the trial as a production environment.
 
 **Messaging preferences:**
 
-- Emphasize full subscription value (versions, critical updates, Customer Portal)—not just access to the latest code.
-- Focus on accelerated time-to-value for time-constrained trial users; deliver a curated path from discovery to actionable evaluation.
-- Highlight **no-cost** and temporary terms; frame as try-before-you-buy evaluation only—not for production.
-- Provide intuitive paths to product: documentation, get-started guides, and clear requirements.
-- Integrate a clear path to purchase / paid subscription.
+- Lead with **no-cost**, time-limited, try-before-you-buy evaluation—never “free,” “win,” or “unlock.”
+- Emphasize full subscription value: all software versions, patches, updates, and the Red Hat Customer Portal—not just the latest code.
+- Frame as evaluation only: product trials are not for production use, and using them in production violates trial terms.
+- Most self-serve trials last 60 days and are self-supported; do not promise 24x7 production support unless the specific trial includes it.
+- Distinguish from the **Red Hat Developer program** (renewable no-cost membership for development-use) and from pay-as-you-go (not a trial; can run in production).
+- Address one audience at a time: Champions need proof to justify a purchase; Technical Practitioners / Architects need hands-on testing in their environment; Developers need to validate locally without production or sales language.
+- Pair the trial with a specific product in multipod emails—the trial is the offer, not a substitute for the product story.
+- Point to documentation, get-started guides, requirements, and My Trials, then a path to a paid subscription after evaluation.
+- Use CTAs such as Start your trial, Explore the trial, or Start evaluating; purchase language is the next step after a successful evaluation, not the trial offer itself.
+- Keep the tone clear, direct, and practical; avoid hype, unproven superlatives, and competitor-trial comparisons.
+- Use **Red Hat product trial** on first mention, then **product trial** or **trial**; never “free trial.”
+
+### Naming aliases
+
+User briefs saying “trial,” “free trial,” “product trial,” or “eval” usually map to **Red Hat product trial**. Do not map Developer program membership or pay-as-you-go cloud offers to this product.
 
 ---
 

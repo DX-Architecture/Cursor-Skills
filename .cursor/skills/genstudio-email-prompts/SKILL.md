@@ -22,7 +22,7 @@ Use only these product guidelines unless the user specifies another. Full descri
 | **Red Hat Enterprise Linux** | Hybrid OS foundation; lead with why RHEL (not why Linux); hybrid consistency; Lightspeed for ops and security |
 | **Red Hat OpenShift Platform Plus** | Prefer this name (not “OpenShift” alone); hybrid app platform at scale |
 | **Red Hat Developer program** | No-cost membership; peer-to-peer; Join / Start building CTAs |
-| **Red Hat product trial** | No-cost, temporary, full-subscription-value evaluation—not production |
+| **Red Hat product trial** | No-cost, typically 60-day, full-subscription-value evaluation—not production; not the Developer program |
 
 Map each pod to one product/offer focus when possible. Briefs that say “OpenShift” map to **Red Hat OpenShift Platform Plus** unless another edition is named.
 
