@@ -74,6 +74,6 @@ From Adobe’s agent prompting guidance, apply to GenStudio briefs:
 
 - `Red Hat Style and Brand/Red Hat_Channel Guidelines.pdf` — email style + character limits (local, gitignored)
 - [GenStudio Personas_WIP](https://docs.google.com/document/d/1Zbqq5GNc5SZ9wwdA6sq8PMuLaeYA0R4i-NsxZ66k5TA/edit?usp=sharing) — Champion, Technical Practitioner / Architect, Developer (see [personas.md](personas.md))
-- `GenStudio Products.txt` — RHEL, product trial, Developer program, OpenShift Platform Plus (see [products.md](products.md))
+- `GenStudio Products.txt` — RHEL, product trial, Developer program, OpenShift Platform Plus, Ansible Automation Platform (see [products.md](products.md))
 - `Red Hat Style and Brand/CY6Q1 GenStudio Testing - Prompt exampels.pdf` / `Prompt Examples.pdf` — validated multipod/single-pod prompt patterns
 - `Red Hat Style and Brand/Character Count_Template.pdf` — supplemental module counts (excluding spaces)
