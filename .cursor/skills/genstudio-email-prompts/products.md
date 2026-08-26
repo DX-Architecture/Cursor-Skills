@@ -7,27 +7,30 @@ Use these when choosing GenStudio **Product** Parameters and when shaping pod fo
 
 ## Red Hat Enterprise Linux
 
-**Description:** Red Hat Enterprise Linux (RHEL) is an industry-leading commercial operating system and the consistent, secure foundation for modern hybrid infrastructures. RHEL empowers organizations to simplify IT complexity and confidently manage workloads across physical, virtual, cloud, and edge environments.
+**Description:** Red Hat® Enterprise Linux® is the consistent, secure operating system for building, deploying, and managing workloads across hybrid cloud. It is for organizations that need one trusted Linux foundation from datacenter to public cloud to edge.
 
 **Value proposition:**
 
-- **Unmatched Hybrid Cloud Freedom** — Consistent operating experience across every environment—from bare-metal servers to multi-cloud deployments. Unlike cloud-provider distributions such as Amazon Linux, RHEL prevents vendor lock-in and gives organizations the flexibility to move workloads freely across any infrastructure.
-- **Proactive, AI-Powered Security** — Government-grade compliance baselines and live kernel patching that minimize downtime. Red Hat Lightspeed uses predictive AI to detect and remediate vulnerabilities before they become costly incidents—shifting security from reactive to proactive.
-- **Operational Efficiency at Scale** — Built-in automation, standardized system roles, and AI-powered predictive analytics via Red Hat Lightspeed reduce manual effort and operational overhead. Manage complex hybrid environments with confidence and consistency.
-- **Optimized for AI and Modern Workloads** — Purpose-built for AI, high-performance computing, and containerized deployments. Application Streams let developers access newer programming tools and databases without risking core system stability. Container-native tools like Podman are available out of the box.
-- **Trusted Partnership and Predictable Stability** — Strategic partner backed by expert global support and an ecosystem of over 1,400 certified cloud partners. A predictable 10-year major release lifecycle eliminates hidden costs and time burden vs. community distributions like Rocky Linux or Ubuntu.
+- Gives organizations one consistent operating foundation so they can run and move workloads across physical, virtual, cloud, and edge environments without rebuilding for each platform.
+- Simplifies day-to-day operations with intelligent guidance from Red Hat Lightspeed and trusted expertise, so teams can develop, deploy, and manage Linux even as skills and environments grow more complex.
+- Helps protect IT environments with proactive security—including compliance baselines, live kernel patching, and Lightspeed-assisted detection and remediation—reducing risk and unplanned downtime.
+- Lets teams modernize with confidence—migrating to the cloud, using containers, and putting AI into production—on a stable platform built to evolve with the business.
+- Provides a trusted subscription: expert support, a predictable 10-year major release lifecycle, and 30 years of open source leadership, so Linux is a long-term foundation rather than a one-time download.
 
 **Messaging preferences:**
 
-- Lead with "Why RHEL"—not "Why Linux." Assume the audience has already chosen Linux.
-- Frame RHEL as a subscription to confidence, not a support insurance policy.
-- Use Red Hat Lightspeed as the primary differentiator for operational efficiency and security.
-- Cite proof points: 1,400+ certified cloud partners, 10-year release lifecycle, 30 years of open-source leadership.
-- Anchor communications on four pillars: trust, protection, simplification, and innovation.
-- Highlight hybrid cloud consistency as a vendor lock-in antidote—RHEL runs identically across bare metal, virtual, cloud, and edge.
-- Surface proof points prominently—never in footnotes.
-- For IT decision-makers and operations leaders, lead with long-term stability, predictable lifecycle, and trusted expert support.
-- For architects making cloud platform decisions, emphasize workload portability, multi-cloud flexibility, and absence of vendor lock-in.
+- Lead with why Red Hat Enterprise Linux—not why Linux. Assume the audience has already chosen Linux.
+- Frame the offer as a subscription to confidence, not as support insurance or a one-time download.
+- Anchor copy on four pillars: trust, protection, simplification, and innovation. Lead with outcomes; use capabilities only to prove those outcomes.
+- Tell a hybrid cloud story: one operating experience across bare metal, virtual, cloud, and edge. Do not frame Red Hat Enterprise Linux as cloud-only.
+- Use Red Hat Lightspeed when the topic is simpler operations, the Linux skills gap, or proactive security. Do not make Lightspeed the entire product story.
+- Address one audience at a time. For IT decision-makers and operations leaders, lead with stability, a predictable lifecycle, and expert support. For architects, lead with workload portability and a consistent foundation across clouds.
+- Use the full product name, **Red Hat Enterprise Linux**, on first mention. After that, **RHEL** is acceptable. Never use Enterprise Linux, EL, or Linux as the product name.
+- Keep the tone clear, direct, and practical. Avoid hype, unproven superlatives, and competitor attacks. When using proof points, cite them in the copy—not in footnotes: 1,400+ certified cloud partners, a 10-year major release lifecycle, and 30 years of open source leadership.
+
+### Naming aliases
+
+User briefs saying “RHEL” or “Linux” usually map to **Red Hat Enterprise Linux** unless they name Fedora, CentOS, or another distribution.
 
 ---
 
