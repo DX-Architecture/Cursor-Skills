@@ -38,38 +38,38 @@ Pod1: In 400 characters or less focus on how Red Hat® Enterprise Linux® is opt
 
 ---
 
-## Example 3 — Multipod (OpenShift + product trial)
+## Example 3 — Multipod (OpenShift Platform Plus + product trial)
 
 **Persona:** Developer  
-**Products:** Red Hat OpenShift, Red Hat product trial
+**Products:** Red Hat OpenShift Platform Plus, Red Hat product trial
 
 **Prompt:**
 
 ```
-Write a promotional multipod email to motivate Developers to ship cloud-native applications faster using Red Hat® OpenShift®. Use a peer-to-peer, code-first tone. Avoid marketing hyperbole.
+Write a promotional multipod email to motivate Developers to ship cloud-native applications faster using Red Hat® OpenShift® Platform Plus. Use a peer-to-peer, code-first tone. Avoid marketing hyperbole.
 
-Pod1: In 300-400 characters focus on Red Hat® OpenShift® as a trusted enterprise Kubernetes platform that reduces friction from inner loop to production.
+Pod1: In 300-400 characters focus on Red Hat® OpenShift® Platform Plus as a unified hybrid cloud platform that reduces friction from inner loop to production while keeping security in the workflow.
 
-Pod2: In 2 sentences maximum promote a no-cost Red Hat product trial so developers can validate OpenShift in their own environment.
+Pod2: In 2 sentences maximum promote a no-cost Red Hat product trial so developers can validate OpenShift Platform Plus in their own environment—not for production use.
 ```
 
-**Parameters:** Persona = Developer; Products = Red Hat OpenShift + Red Hat product trial; multipod.
+**Parameters:** Persona = Developer; Products = Red Hat OpenShift Platform Plus + Red Hat product trial; multipod.
 
 ---
 
-## Example 4 — Multipod (Partner)
+## Example 4 — Multipod (RHEL + product trial)
 
 **Persona:** Champion  
-**Product:** Red Hat Partner
+**Products:** Red Hat Enterprise Linux, Red Hat product trial
 
 **Prompt:**
 
 ```
-Write a promotional multipod email to motivate Champions to build internal urgency and align stakeholders around Red Hat solutions with Red Hat Partner support.
+Write a promotional multipod email to motivate Champions to build internal urgency and align stakeholders around standardizing on Red Hat® Enterprise Linux®.
 
-Pod1: In 3 sentences maximum emphasize how partner expertise and proof points help Champions justify ROI and overcome executive inertia.
+Pod1: In 3 sentences maximum emphasize hybrid cloud consistency, predictable lifecycle, and proof points Champions can use to justify ROI and overcome executive inertia.
 
-Pod2: In 2 sentences maximum highlight responsive technical and sales support that keeps buying and adoption on track.
+Pod2: In 2 sentences maximum promote a no-cost Red Hat product trial with full subscription-level access so teams can evaluate RHEL before purchase.
 ```
 
-**Parameters:** Persona = Champion; Product = Red Hat Partner; multipod.
+**Parameters:** Persona = Champion; Products = Red Hat Enterprise Linux + Red Hat product trial; multipod.
