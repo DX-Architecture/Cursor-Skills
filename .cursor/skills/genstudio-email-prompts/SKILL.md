@@ -1,6 +1,6 @@
 ---
 name: genstudio-email-prompts
-description: Craft Adobe GenStudio for Performance Marketing prompts for Red Hat email experiences—single-product and multipod (Pod1, Pod2+) structured prompts with channel character limits and GenStudio personas. Use when the user asks for GenStudio prompts, email marketing prompts, multipod emails, pod-based email copy, or GenStudio Create briefings for RHEL, OpenShift, Developer program, Partner, or product trial.
+description: Craft Adobe GenStudio for Performance Marketing prompts for Red Hat email experiences—single-product and multipod (Pod1, Pod2+) structured prompts with channel character limits, GenStudio personas, and product guidelines. Use when the user asks for GenStudio prompts, email marketing prompts, multipod emails, pod-based email copy, or GenStudio Create briefings for RHEL, OpenShift Platform Plus, Developer program, or product trial.
 ---
 
 # GenStudio Email Prompts
@@ -15,15 +15,16 @@ Produce paste-ready prompts for **Adobe GenStudio for Performance Marketing** em
 
 ## Products (GenStudio Parameters)
 
-Use only these product guidelines unless the user specifies another:
+Use only these product guidelines unless the user specifies another. Full descriptions, value props, and messaging preferences: [products.md](products.md).
 
-- Red Hat Enterprise Linux
-- Red Hat OpenShift
-- Red Hat Developer program
-- Red Hat Partner
-- Red Hat product trial
+| Product | Notes |
+|---------|--------|
+| **Red Hat Enterprise Linux** | Hybrid OS foundation; lead with “Why RHEL,” Lightspeed, hybrid consistency |
+| **Red Hat OpenShift Platform Plus** | Prefer this name (not “OpenShift” alone); hybrid app platform at scale |
+| **Red Hat Developer program** | No-cost membership; peer-to-peer; Join / Start building CTAs |
+| **Red Hat product trial** | No-cost, temporary, full-subscription-value evaluation—not production |
 
-Map each pod to one product/offer focus when possible.
+Map each pod to one product/offer focus when possible. Briefs that say “OpenShift” map to **Red Hat OpenShift Platform Plus** unless another edition is named.
 
 ## Personas (GenStudio Parameters)
 
@@ -64,7 +65,7 @@ If missing, ask briefly—or infer and note assumptions:
 | **Goal / CTA intent** | Motivate, educate, drive trial, standardize, partner action |
 | **Persona** | Champion, Technical Practitioner / Architect, or Developer |
 | **Product(s)** | From the list above; one per pod when multipod |
-| **Key message / benefits** | Align to persona messaging preferences |
+| **Key message / benefits** | Align to persona + product messaging preferences |
 | **Tone / do-nots** | Per channel guidelines + any campaign constraints |
 
 Brand, Persona, and Product **guidelines** are selected in GenStudio Parameters—do **not** paste full brand guidelines into the prompt.
@@ -114,8 +115,10 @@ Preserve ®/™ when the user supplies them (e.g. `Red Hat® Enterprise Linux®`
 
 - Channel limits & email style: [channel-guidelines.md](channel-guidelines.md)
 - Persona descriptions & messaging: [personas.md](personas.md)
+- Product descriptions & messaging: [products.md](products.md)
 - Adobe GenStudio rules: [reference.md](reference.md)
 - Examples: [examples.md](examples.md)
 
 Local brand PDFs (gitignored): `Red Hat Style and Brand/Red Hat_Channel Guidelines.pdf`, `Red Hat Style and Brand/Persona.pdf`, `Red Hat Style and Brand/Prompt Examples.pdf`  
-Personas source: [GenStudio Personas_WIP](https://docs.google.com/document/d/1Zbqq5GNc5SZ9wwdA6sq8PMuLaeYA0R4i-NsxZ66k5TA/edit?usp=sharing) → [personas.md](personas.md)
+Personas source: [GenStudio Personas_WIP](https://docs.google.com/document/d/1Zbqq5GNc5SZ9wwdA6sq8PMuLaeYA0R4i-NsxZ66k5TA/edit?usp=sharing) → [personas.md](personas.md)  
+Products source: `GenStudio Products.txt` → [products.md](products.md)

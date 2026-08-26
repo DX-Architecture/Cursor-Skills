@@ -63,18 +63,17 @@ From Adobe’s agent prompting guidance, apply to GenStudio briefs:
 - [ ] Specific about what to do and not do
 - [ ] External/campaign context when useful
 - [ ] Guidelines used in Parameters, not pasted into prompt
-- [ ] Persona and product from repo lists ([personas.md](personas.md), SKILL products)
+- [ ] Persona and product from repo lists ([personas.md](personas.md), [products.md](products.md))
 - [ ] Pod names match the email template
 - [ ] One distinct focus per pod
 - [ ] Body ≤ 3 sentences per pod; length encoded in pod directives when useful
 - [ ] Channel character limits respected ([channel-guidelines.md](channel-guidelines.md))
 - [ ] Ready to iterate after first generation
 
-## Red Hat source PDFs
+## Red Hat sources
 
-Located in the local **Red Hat Style and Brand/** folder (gitignored; not published):
-
-- `Red Hat Style and Brand/Red Hat_Channel Guidelines.pdf` — email style + character limits
+- `Red Hat Style and Brand/Red Hat_Channel Guidelines.pdf` — email style + character limits (local, gitignored)
 - [GenStudio Personas_WIP](https://docs.google.com/document/d/1Zbqq5GNc5SZ9wwdA6sq8PMuLaeYA0R4i-NsxZ66k5TA/edit?usp=sharing) — Champion, Technical Practitioner / Architect, Developer (see [personas.md](personas.md))
-- `Red Hat Style and Brand/CY6Q1 GenStudio Testing - Prompt exampels.pdf` — validated multipod/single-pod prompt patterns
+- `GenStudio Products.txt` — RHEL, product trial, Developer program, OpenShift Platform Plus (see [products.md](products.md))
+- `Red Hat Style and Brand/CY6Q1 GenStudio Testing - Prompt exampels.pdf` / `Prompt Examples.pdf` — validated multipod/single-pod prompt patterns
 - `Red Hat Style and Brand/Character Count_Template.pdf` — supplemental module counts (excluding spaces)
