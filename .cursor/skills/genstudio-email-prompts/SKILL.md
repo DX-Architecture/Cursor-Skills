@@ -52,9 +52,13 @@ Enforce Red Hat channel guidelines in pod directives and when reviewing generate
 | Body | Max **3 sentences per pod**; outcomes over description |
 | CTA | 20–25 characters max |
 
-**Style:** scannable; customer benefit first; active voice; second person when appropriate; Oxford commas; avoid contractions; avoid vague words (e.g. “flexible,” “scalable”); subject/preheader—no “free/win/unlock” (use “no-cost”); CTA verbs like Download, Register, Start, Explore, Watch—never “click here.”
+**Style:** scannable; customer benefit first; active voice; second person when appropriate; Oxford commas; contractions allowed in email; avoid vague words (e.g. “flexible,” “scalable”); entire email—no “free/win/unlock” (use “no-cost”); CTA verbs like Download, Register, Start, Explore, Watch—never “click here.”
 
-**In prompts:** bake length into pod lines when helpful, e.g. `Pod1: In 300-400 characters…` or `Pod2: In 2 sentences maximum…` (body still ≤ 3 sentences per pod).
+**Body rhythm** (Brand → Channel guidelines → Email → Body—not the prompt): avoid long, information-dense sentences with similar length; do not start the body with “You.” Use these when reviewing generated copy.
+
+**Brand editorial** (Brand → Editorial guidelines and Editorial restrictions—not the prompt): first-use naming; sentence case headlines; numerals; “application” not “app”; Red Hat as “it.” Restrictions: no uncited superlatives; no “secure/more secure”; no AI-typical wording; no vague words used alone; no “the” before product names; no “please” or “click here.” Use when reviewing generated copy. Canonical text: [brand-guidelines.md](brand-guidelines.md).
+
+**In prompts:** bake length into pod lines when helpful, e.g. `Pod1: In 300-400 characters…` or `Pod2: In 2 sentences maximum…` (body still ≤ 3 sentences per pod). Do not repeat Body channel guidelines or Brand editorial guidelines or restrictions in the prompt.
 
 ## Inputs to collect
 
@@ -115,6 +119,7 @@ Preserve ®/™ when the user supplies them (e.g. `Red Hat® Enterprise Linux®`
 ## References
 
 - Channel limits & email style: [channel-guidelines.md](channel-guidelines.md)
+- Brand editorial (abbreviations, product first-use naming): [brand-guidelines.md](brand-guidelines.md)
 - Persona descriptions & messaging: [personas.md](personas.md)
 - Product descriptions & messaging: [products.md](products.md)
 - Adobe GenStudio rules: [reference.md](reference.md)
@@ -122,4 +127,4 @@ Preserve ®/™ when the user supplies them (e.g. `Red Hat® Enterprise Linux®`
 
 Local brand PDFs (gitignored): `Red Hat Style and Brand/Red Hat_Channel Guidelines.pdf`, `Red Hat Style and Brand/Persona.pdf`, `Red Hat Style and Brand/Prompt Examples.pdf`  
 Personas source: [GenStudio Personas_WIP](https://docs.google.com/document/d/1Zbqq5GNc5SZ9wwdA6sq8PMuLaeYA0R4i-NsxZ66k5TA/edit?usp=sharing) → [personas.md](personas.md)  
-Products source: `GenStudio Products.txt` → [products.md](products.md)
+Products source: [GenStudio Products](https://docs.google.com/document/d/1SBPVonkB1fq5vjLSOOp2NCDu1ZonZcKRsvoNyx0KkYk/edit?usp=sharing) (`GenStudio Products.txt`) → [products.md](products.md)
