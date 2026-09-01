@@ -54,11 +54,11 @@ Enforce Red Hat channel guidelines in pod directives and when reviewing generate
 
 **Style:** scannable; customer benefit first; active voice; second person when appropriate; Oxford commas; contractions allowed in email; avoid vague words (e.g. “flexible,” “scalable”); entire email—no “free/win/unlock” (use “no-cost”); CTA verbs like Download, Register, Start, Explore, Watch—never “click here.”
 
-**Body rhythm** (Brand → Channel guidelines → Email → Body—not the prompt): avoid long, information-dense sentences with similar length; do not start the body with “You.” Use these when reviewing generated copy.
+**Channel fields** (Brand → Channel guidelines → Email—not the prompt): per-field lines for General, Subject, Preheader, Headline, Sub-headline, Body, and CTA. Body includes sentence rhythm, do not start with “You,” one focus per pod, outcome then proof. Use when reviewing generated copy. Canonical text: [channel-guidelines.md](channel-guidelines.md).
 
 **Brand editorial** (Brand → Editorial guidelines and Editorial restrictions—not the prompt): first-use naming; sentence case headlines; numerals; “application” not “app”; Red Hat as “it.” Restrictions: no uncited superlatives; no “secure/more secure”; no AI-typical wording; no vague words used alone; no “the” before product names; no “please” or “click here.” Use when reviewing generated copy. Canonical text: [brand-guidelines.md](brand-guidelines.md).
 
-**In prompts:** bake length into pod lines when helpful, e.g. `Pod1: In 300-400 characters…` or `Pod2: In 2 sentences maximum…` (body still ≤ 3 sentences per pod). Do not repeat Body channel guidelines or Brand editorial guidelines or restrictions in the prompt.
+**In prompts:** bake length into pod lines when helpful, e.g. `Pod1: In 300-400 characters…` or `Pod2: In 2 sentences maximum…` (body still ≤ 3 sentences per pod). Do not repeat Email channel field guidelines or Brand editorial guidelines or restrictions in the prompt.
 
 ## Inputs to collect
 

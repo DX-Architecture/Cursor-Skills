@@ -2,7 +2,7 @@
 
 Aligned with `CY6Q1 GenStudio Testing - Prompt exampels.pdf` and Red Hat channel limits.
 
-Sentence rhythm and “do not start the body with You” live in Brand → Channel guidelines → Email → Body. Do not repeat them in the prompt.
+Email Subject, Preheader, Headline, Sub-headline, Body, CTA, and General live in Brand → Channel guidelines. Do not repeat them in the prompt.
 
 ## Example 1 — Multipod (RHEL + Developer program)
 

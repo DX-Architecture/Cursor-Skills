@@ -33,6 +33,6 @@ Email body rhythm and character limits stay in Channel guidelines: [channel-guid
 | **Brand editorial** | First-use pattern, headline case, numerals, application vs app, Red Hat as “it” |
 | **Brand restrictions** | Absolutes, security claims, AI-typical wording, vague words, “the” before products, please / click here |
 | **Product** | Which short forms are approved (RHEL, OpenShift Platform Plus, Ansible Automation Platform, product trial) and which are forbidden (EL, OPP, AAP, free trial) |
-| **Channel (email)** | Character limits, body rhythm, CTA verbs; contractions allowed; ban “flexible” / “scalable”; ban “free” / “win” / “unlock” (use no-cost) |
+| **Channel (email)** | Per-field General, Subject, Preheader, Headline, Sub-headline, Body, CTA (2–5 each); contractions allowed; ban “flexible” / “scalable”; ban “free” / “win” / “unlock” (use no-cost) |
 
 Do not add trademark symbols (® / ™ / r-ball) to Brand or Channel guidelines. Preserve marks only when the user supplies them in a brief.

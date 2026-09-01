@@ -32,21 +32,64 @@ Source: `Red Hat Style and Brand/Red Hat_Channel Guidelines.pdf`
 
 Avoid words like “free,” “win,” or “unlock” anywhere in the email (spam triggers). For no-charge offers, use **“no-cost”** (e.g. “take this assessment at no cost,” “we’re offering a no-cost trial”).
 
+Keep each Email field to **2–5 guidelines**. Put 3–5 previously successful Red Hat lines in that field’s **Examples** box (subjects, preheaders, headlines, body pods, CTAs). Do not also put these lines in the prompt.
+
 ### Email General (GenStudio Brand channel)
 
-Configured in Brand → Channel guidelines → Email → General. Do not also put these lines in the prompt.
+Configured in Brand → Channel guidelines → Email → General.
 
 - Contractions are allowed in email
 - Avoid imprecise, ambiguous language (e.g. “flexible,” “scalable”) in favor of specific terms
 - Avoid “free,” “win,” or “unlock.” Use “no-cost” for no-charge offers
+- Lead with customer benefit. Keep tone clear, direct, and practical across the email.
+
+### Email Subject (GenStudio Brand channel)
+
+Configured in Brand → Channel guidelines → Email → Subject.
+
+- Limit to 30–40 characters. Put the most important words first.
+- Align the subject with the email body. Do not tease an offer the body does not make.
+- Use sentence case. Avoid ALL CAPS, emoji, and exclamation points.
+
+### Email Preheader (GenStudio Brand channel)
+
+Configured in Brand → Channel guidelines → Email → Preheader.
+
+- Limit to 40–60 characters. Complement the subject; never repeat it verbatim.
+- Do not start with the same opening words as the subject.
+- Do not end with a period.
+
+### Email Headline (GenStudio Brand channel)
+
+Configured in Brand → Channel guidelines → Email → Headline.
+
+- Limit to 30 characters. Task-oriented; sentence case.
+- Do not restate the subject line.
+
+### Email Sub-headline (GenStudio Brand channel)
+
+Configured in Brand → Channel guidelines → Email → Sub-headline.
+
+- Limit to 45 characters. Extend the headline; do not repeat it.
+- End punctuation only if it is more than one thought or a question.
 
 ### Email Body (GenStudio Brand channel)
 
-Configured in Brand → Channel guidelines → Email → Body. Do not also put these lines in the prompt.
+Configured in Brand → Channel guidelines → Email → Body.
 
 - Vary sentence length. Avoid long, information-dense sentences with similar length.
 - Do not start the body with “You.”
 - Max 3 sentences per pod. One idea per sentence. Prioritize outcomes.
+- Each pod has one distinct focus. Do not recap the previous pod.
+- Lead with the customer outcome, then the proof. One idea per sentence.
+
+### Email CTA (GenStudio Brand channel)
+
+Configured in Brand → Channel guidelines → Email → Call-to-action.
+
+- Limit to 20–25 characters. No end punctuation.
+- Use a specific verb plus object (Start your trial, Explore RHEL). Avoid generic Learn more when the action is specific.
+- Tie the CTA to the benefit in that pod. Avoid “click here” and “please.”
 
 ## Supplemental module counts
 
@@ -61,4 +104,4 @@ Encode body limits in pod directives, e.g.:
 
 Stay within **3 sentences per pod** even when using character targets.
 
-Do not duplicate Email Body channel guidelines in the prompt. Sentence rhythm and “do not start the body with You” live on the Brand.
+Do not duplicate Email channel field guidelines in the prompt. Subject, preheader, headline, sub-headline, body, CTA, and General live on the Brand.

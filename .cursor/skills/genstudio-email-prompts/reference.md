@@ -67,7 +67,7 @@ From Adobe’s agent prompting guidance, apply to GenStudio briefs:
 - [ ] Pod names match the email template
 - [ ] One distinct focus per pod
 - [ ] Body ≤ 3 sentences per pod; length encoded in pod directives when useful
-- [ ] Body rhythm (avoid long, information-dense sentences with similar length; do not start the body with “You”) lives in Brand Email Body channel guidelines—not the prompt
+- [ ] Email channel field guidelines (General, Subject, Preheader, Headline, Sub-headline, Body, CTA) live on the Brand—not the prompt ([channel-guidelines.md](channel-guidelines.md))
 - [ ] Brand editorial and restrictions live in Brand Parameters—not the prompt ([brand-guidelines.md](brand-guidelines.md))
 - [ ] Channel character limits respected ([channel-guidelines.md](channel-guidelines.md))
 - [ ] Ready to iterate after first generation
