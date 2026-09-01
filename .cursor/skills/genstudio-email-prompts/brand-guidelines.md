@@ -1,10 +1,27 @@
-# Brand editorial guidelines
+# Brand guidelines
 
-Source of truth for GenStudio **Brand → Editorial guidelines** and **Brand → Editorial restrictions**. Do not repeat these lines in the prompt when Brand is selected in Parameters.
+Source of truth for GenStudio **Brand → Tone of voice**, **Brand values**, **Editorial guidelines**, and **Editorial restrictions**. Do not repeat these lines in the prompt when Brand is selected in Parameters.
 
 Approved short names (what you may shorten *to*, and what never to use) stay in Product guidelines: [products.md](products.md).
 
-Email body rhythm and character limits stay in Channel guidelines: [channel-guidelines.md](channel-guidelines.md).
+Email field craft and character limits stay in Channel guidelines: [channel-guidelines.md](channel-guidelines.md).
+
+Adobe caps Tone of voice and Brand values at **3–6 guidelines** each.
+
+## Configured in Brand → Tone of voice
+
+- Speak as a confident, precise expert partner, not a lecturer and not a salesperson.
+- Be clear, direct, and practical. Prefer specific outcomes over slogans.
+- Acknowledge the reader’s operational problem, then move to useful guidance. Do not open with sympathy or “You know…”
+- Stay humble and honest. Do not inflate importance with hype, superlatives, or brand chest-beating.
+- Encourage a better way of working without dismissing the reader’s current environment.
+
+## Configured in Brand → Brand values
+
+- Open: Prefer transparency and collaboration over secrecy and control. Use inclusive language. Do not lecture.
+- Authentic: Prefer truth over hype. Acknowledge complexity. Do not overpromise.
+- Helpful: Prefer customer success over company promotion. Give an actionable next step the reader can take.
+- Brave: Take a clear, principled position. Challenge industry assumptions with respect. Do not attack competitors.
 
 ## Configured in Brand → Editorial guidelines
 
@@ -30,9 +47,11 @@ Email body rhythm and character limits stay in Channel guidelines: [channel-guid
 
 | Layer | Owns |
 |-------|------|
+| **Tone of voice** | Personality: expert partner, practical, humble, no hype, no dismissed current environment |
+| **Brand values** | Open, Authentic, Helpful, Brave (no competitor attacks) |
 | **Brand editorial** | First-use pattern, headline case, numerals, application vs app, Red Hat as “it” |
 | **Brand restrictions** | Absolutes, security claims, AI-typical wording, vague words, “the” before products, please / click here |
 | **Product** | Which short forms are approved (RHEL, OpenShift Platform Plus, Ansible Automation Platform, product trial) and which are forbidden (EL, OPP, AAP, free trial) |
-| **Channel (email)** | Character limits, body rhythm, CTA verbs; contractions allowed; ban “flexible” / “scalable”; ban “free” / “win” / “unlock” (use no-cost) |
+| **Channel (email)** | Per-field General, Subject, Preheader, Headline, Sub-headline, Body, CTA; contractions allowed; ban “flexible” / “scalable”; ban “free” / “win” / “unlock” (use no-cost) |
 
-Do not add trademark symbols (® / ™ / r-ball) to Brand or Channel guidelines. Preserve marks only when the user supplies them in a brief.
+Do not add trademark symbols (® / ™ / r-ball) to Brand or Channel guidelines. Preserve marks only when the user supplies them in a brief. Do not use “flexible” in Tone of voice; that ban lives in Channel.
