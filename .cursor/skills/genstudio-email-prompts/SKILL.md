@@ -19,7 +19,7 @@ Use only these product guidelines unless the user specifies another. Full descri
 
 | Product | Notes |
 |---------|--------|
-| **Red Hat Enterprise Linux** | Hybrid OS foundation; lead with why RHEL (not why Linux); hybrid consistency; Lightspeed for ops and security |
+| **Red Hat Enterprise Linux** | Hybrid OS foundation; lead with why RHEL (not why Linux); hardened foundation and closed-loop remediation; hybrid consistency; Lightspeed for ops and security |
 | **Red Hat OpenShift Platform Plus** | Prefer this name (not “OpenShift” alone); hybrid app platform at scale |
 | **Red Hat Ansible Automation Platform** | Prefer this name (not “Ansible” or AAP); enterprise automation at scale; Lightspeed for skills gap, not the whole story |
 | **Red Hat Developer program** | No-cost membership; peer-to-peer; Join / Start building CTAs |
