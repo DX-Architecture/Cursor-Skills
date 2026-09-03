@@ -18,16 +18,18 @@ If guidelines are selected in Parameters, do not duplicate them in the prompt te
 
 ## Structured prompts (multi-section email)
 
-For multipod templates:
+Source: [structured-prompts.png](structured-prompts.png) (Adobe GenStudio academy / Write effective prompts).
 
-1. Generic user prompt first
-2. Section-specific directives that **match template section names**
-3. Valid section name families: **Pod**, **Group**, **Section**, **Module** (e.g. `Pod1`, `Pod2`)
-4. Case-insensitive (`pod1` = `Pod1`)
-5. Demarcation between name and directive: `,` `:` `;` `#` `$` `!` `~` `|` `@` `=` `-` `%` `&` `*` `^` `_`
-6. If structure is invalid, GenStudio may apply the whole prompt to all sections
+Structured prompts give the LLM specific instruction about what content to put in specific fields. Especially useful for experiences with many sections, including multi-pod emails.
 
-Adobe’s sample pattern:
+### How it works
+
+1. Reference the **generic user prompt first**, then section-specific directives.
+2. Separate the field name from its directive with `:`, `;`, `-`, or `,` (Adobe also accepts `# $ ! ~ | @ = % & * ^ _`). Example: `Pod1; Describe how to easily edit text and swap images.`
+3. Refer to fields **exactly as the template defines them**. Common names: `introduction`, `on-image text`, `headline`, `pod1`, `footer`. Duplicate field types are numbered (`on_image_text1`, `on_image_text2`). Section-name families: **Pod**, **Group**, **Section**, **Module**. Case-insensitive (`pod1` = `Pod1`).
+4. If the structure pattern is not followed, GenStudio treats the prompt as **global** and applies it to all sections, which usually reduces performance.
+
+Adobe’s sample pattern (format only—not a Red Hat prompt; do not copy “free trial” wording into Red Hat briefs):
 
 ```
 Create an exciting multi-pod email focusing on Creative Cloud and its powerful generative AI capabilities.
@@ -36,9 +38,9 @@ Encourage customers to convert to Photoshop or use a free Photoshop trial. We wa
 
 Pod1: Focus on Adobe Photoshop and its new generative AI tools that enable creators to bring images to life in minutes.
 
-Pod2: Focus on Adobe Illustrator and its new generative AI tools, such as Generative Shape Fill...
+Pod2: Focus on Adobe Illustrator and its new generative AI tools, such as Generative Shape Fill, which allows you to quickly fill your vector outline and explore a variety of options that match the look and feel of your own artwork.
 
-Pod3: Focus on Adobe Acrobat Pro...
+Pod3: Focus on Adobe Acrobat Pro. Make users aware that with Acrobat Pro they can edit images and text inside a PDF.
 ```
 
 ## Email experience context
@@ -78,5 +80,6 @@ From Adobe’s agent prompting guidance, apply to GenStudio briefs:
 - [brand-guidelines.md](brand-guidelines.md) — Brand tone of voice, values, editorial, and restrictions
 - [GenStudio Personas_WIP](https://docs.google.com/document/d/1Zbqq5GNc5SZ9wwdA6sq8PMuLaeYA0R4i-NsxZ66k5TA/edit?usp=sharing) — Champion, Technical Practitioner / Architect, Developer (see [personas.md](personas.md))
 - `GenStudio Products.txt` — RHEL, product trial, Developer program, OpenShift Platform Plus, Ansible Automation Platform (see [products.md](products.md))
+- [structured-prompts.png](structured-prompts.png) — Adobe structured-prompt rules and Creative Cloud format example
 - `Red Hat Style and Brand/CY6Q1 GenStudio Testing - Prompt exampels.pdf` / `Prompt Examples.pdf` — validated multipod/single-pod prompt patterns
 - `Red Hat Style and Brand/Character Count_Template.pdf` — supplemental module counts (excluding spaces)
