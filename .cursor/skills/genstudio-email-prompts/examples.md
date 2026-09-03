@@ -1,8 +1,24 @@
 # GenStudio email prompt examples
 
-Aligned with `CY6Q1 GenStudio Testing - Prompt exampels.pdf` and Red Hat channel limits.
+Aligned with `CY6Q1 GenStudio Testing - Prompt exampels.pdf`, Adobe structured-prompt format ([structured-prompts.png](structured-prompts.png)), and Red Hat channel limits.
 
 Sentence rhythm and “do not start the body with You” live in Brand → Channel guidelines → Email → Body. Do not repeat them in the prompt.
+
+## Adobe format (structure only)
+
+Adobe’s canonical structured prompt. Use this **shape** (generic prompt, then `PodN:` directives). Do not copy Creative Cloud product copy or “free trial” wording into Red Hat briefs.
+
+```
+Create an exciting multi-pod email focusing on Creative Cloud and its powerful generative AI capabilities.
+
+Encourage customers to convert to Photoshop or use a free Photoshop trial. We want to better educate them about app features.
+
+Pod1: Focus on Adobe Photoshop and its new generative AI tools that enable creators to bring images to life in minutes.
+
+Pod2: Focus on Adobe Illustrator and its new generative AI tools, such as Generative Shape Fill, which allows you to quickly fill your vector outline and explore a variety of options that match the look and feel of your own artwork.
+
+Pod3: Focus on Adobe Acrobat Pro. Make users aware that with Acrobat Pro they can edit images and text inside a PDF.
+```
 
 ## Example 1 — Multipod (RHEL + Developer program)
 

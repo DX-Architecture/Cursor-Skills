@@ -79,13 +79,17 @@ Brand, Persona, and Product **guidelines** are selected in GenStudio Parameters�
 
 ## Prompt construction rules
 
+Structured prompts give the LLM field-specific instructions. Use them for multi-section experiences (including multi-pod emails). Source: [structured-prompts.png](structured-prompts.png).
+
 1. **Lead with a generic user prompt** — intent, persona/audience, overall product/theme.
-2. **Then add section directives** for multipod (`Pod1`, `Pod2`, …).
-3. **Match template section names** — `Pod` (also `Group` / `Section` / `Module` if the template uses those). Case-insensitive.
-4. **Separate name from directive** with `:`, `-`, `;`, etc.: `Pod1: Focus on…`
+2. **Then add section-specific directives** (`Pod1`, `Pod2`, …).
+3. **Match template field names exactly** — as the template defines them. Common names: `Pod` / `Group` / `Section` / `Module` (e.g. `Pod1`), `introduction`, `on-image text`, `headline`, `footer`. Duplicate fields are numbered (`on_image_text1`, `on_image_text2`). Case-insensitive.
+4. **Separate name from directive** with `:`, `;`, `-`, or `,`: `Pod1: Focus on…` or `Pod1; Describe how to easily edit text and swap images.`
 5. **Be specific** — audience, purpose, features, benefits, action; include character/sentence caps per pod when useful.
 6. **One focus per pod** — distinct product or benefit.
 7. **Iterate** — tighten specifics or name themes/words to avoid.
+
+If the structure pattern is not followed, GenStudio treats the prompt as **global** and applies it to all sections, which usually reduces performance.
 
 ### Single-product
 
@@ -125,6 +129,7 @@ Preserve ®/™ when the user supplies them (e.g. `Red Hat® Enterprise Linux®`
 - Persona descriptions & messaging: [personas.md](personas.md)
 - Product descriptions & messaging: [products.md](products.md)
 - Adobe GenStudio rules: [reference.md](reference.md)
+- Adobe structured-prompt source: [structured-prompts.png](structured-prompts.png)
 - Examples: [examples.md](examples.md)
 
 Local brand PDFs (gitignored): `Red Hat Style and Brand/Red Hat_Channel Guidelines.pdf`, `Red Hat Style and Brand/Persona.pdf`, `Red Hat Style and Brand/Prompt Examples.pdf`  
