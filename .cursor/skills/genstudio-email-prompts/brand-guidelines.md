@@ -50,7 +50,7 @@ Do not paste this table into GenStudio. Use it to rewrite the user brief and any
 | flexible, flexibility, scalable | How it works in this environment (one operating experience across footprints; add capacity without rebuilding). Channel still bans `flexible` / `scalable` even though Tone mentions flexibility. |
 | the Red Hat Enterprise Linux / the [Product] | Red Hat Enterprise Linux (no “the”) |
 | free, free trial, win, unlock | no-cost product trial (Channel, not Brand) |
-| click here | omit; CTA verbs Start, Explore, Register, Download, Watch (Channel, not Brand) |
+| click here, Learn more, Unlock | omit; CTA is 2–4 words, verb + object (Start your trial, Explore RHEL) (Channel, not Brand) |
 | leading, best, fastest, only, 100% | omit unless a citation will appear in the generated copy |
 | delve, harness, pivotal, landscape, testament, tapestry, unwavering, “In today’s fast-paced…” | omit |
 
@@ -70,7 +70,7 @@ These are live in GenStudio as written. Do not silently rewrite the configured l
 | Tone frames **developers and architects** | Champion / Selector emails can drift off-persona. Keep persona in the prompt; do not default every email to developers. |
 | Tone is **6 / 6** (Adobe cap) | More Tone lines = more Brand checks that can fail. |
 | Editorial no longer requires sentence case, “application” not “app,” numerals, or expand-on-first-use for LLM-style abbreviations | Those rules are **not scored** unless they live in Channel. `app` vs `application` is no longer a Brand editorial check. |
-| Vague-word rule is now **without a direct object**; `enhance` / `improve` / `please` / `click here` dropped from Brand | `streamline operations` may now pass Brand. `click here` is still a Channel CTA fail. |
+| Vague-word rule is now **without a direct object**; `enhance` / `improve` / `please` / `click here` dropped from Brand | `streamline operations` may now pass Brand. `click here` and `Learn more` are still Channel CTA fails. |
 
 ## How this layers
 
@@ -81,6 +81,6 @@ These are live in GenStudio as written. Do not silently rewrite the configured l
 | **Brand editorial** | Full product name first in body; abbreviations OK in subject/headline; approved initialisms only; common terms stay abbreviated; Red Hat as “it” or “we/our,” not “they” |
 | **Brand restrictions** | Absolutes, security claims, AI-typical wording (including testament / tapestry), vague words without a direct object, “the” before products |
 | **Product** | Which short forms are approved (RHEL, OpenShift Platform Plus, Ansible Automation Platform, product trial) and which are forbidden (EL, OPP, AAP, free trial) |
-| **Channel (email)** | Per-field General, Subject, Preheader, Headline, Sub-headline, Body, CTA; contractions allowed; ban “flexible” / “scalable”; ban “free” / “win” / “unlock” (use no-cost); ban “click here” |
+| **Channel (email)** | Per-field General, Subject (30–50), Preheader (40–90), Headline (8 words), Sub-headline (45), Body (3 sentences/section), CTA (2–4 words, verb + object); contractions allowed; ban “flexible” / “scalable”; ban “free” / “win” / “unlock” (use no-cost); ban “Learn more” / “click here” |
 
 Do not add trademark symbols (® / ™ / r-ball) to Brand or Channel guidelines. Preserve marks only when the user supplies them in a brief.

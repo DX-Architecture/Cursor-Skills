@@ -1,64 +1,85 @@
 # Red Hat email channel guidelines
 
-Source: `Red Hat Style and Brand/Red Hat_Channel Guidelines.pdf`
+Source of truth for GenStudio **Brand → Channel guidelines → Email**. Do not paste these lists into the prompt when Brand is selected in Parameters.
 
-## General
+Optimized for GenStudio Content check: one job per line, one max per field, no banned words in examples. Legacy PDF limits stay in Supplemental module counts for template overflow.
 
-- Define overall tone/emotion consistently throughout the email
-- Make content highly scannable
-- Use consistent terminology for actions and objects
-- Lead with the customer benefit of Red Hat and Red Hat products
-- Use active voice whenever possible
-- Write for the reader using second person (“you” / “your”) when appropriate
-- Do not start the body with “You”
-- Avoid long, information-dense sentences with similar length; vary sentence length
-- Capitalize product names, acronyms, and initialisms
-- Use serial (Oxford) commas
-- Contractions are allowed in email
-- Avoid imprecise, ambiguous language (e.g. “flexible,” “scalable”) in favor of specific terms
+## Limits (skill + manual field edits)
 
-## Character limits
-
-| Element | Limit | Notes |
+| Element | Limit | Craft |
 |---------|--------|--------|
-| **Subject line** | 30–40 characters maximum | Most important words first; tight and specific |
-| **Preheader** | 40–60 characters | Complement subject—extend or add context; never repeat verbatim; do not end with a period |
-| **Headline** | 30 characters maximum | Task-oriented; brief; end punctuation only if more than one complete sentence/thought or if a question |
-| **Sub-headline** | 45 characters max | Same end-punctuation rule as headline |
-| **Body** | Max **3 sentences per pod** | One idea per sentence; avoid subordinate clauses that delay the main point; state what the reader can do or gain; prioritize outcomes; conversational style. GenStudio Email Body field (do not also put in the prompt): Vary sentence length. Avoid long, information-dense sentences with similar length. Do not start the body with “You.” |
-| **CTA** | 20–25 characters max | Specific action verbs: Download, Register, Start, Explore, Watch; avoid “click here”; tie action to the benefit stated earlier |
+| **Subject line** | 30–50 characters | Offer/outcome in the first 30 characters; action verb Get, Start, Explore, or Try—never Unlock, Free, or Win; no trailing period |
+| **Preheader** | 40–90 characters | Extra context in the first 40 characters; do not repeat the subject; no trailing period |
+| **Headline** | Max 8 words | Primary outcome in the first 3 words; capability only as proof; no trailing period |
+| **Sub-headline** | 45 characters max | Elaborate the headline promise; no trailing period; question marks allowed |
+| **Body** | Max **3 sentences per section** | One idea per sentence; outcomes over description; do not start the first sentence with You |
+| **CTA** | **2–4 words** | Action verb + object (Start your trial, Explore RHEL); never Learn more, Click here, or Unlock; no end punctuation |
 
-### Offer language (entire email)
+Do not use a 75–150 word body target in Channel or in prompts. GenStudio scores each Body field; that range over-generates multipod sections and fails short 3-sentence pods.
 
-Avoid words like “free,” “win,” or “unlock” anywhere in the email (spam triggers). For no-charge offers, use **“no-cost”** (e.g. “take this assessment at no cost,” “we’re offering a no-cost trial”).
+## Configured in Brand → Channel → Email → General
 
-### Email General (GenStudio Brand channel)
+- Maintain a clear, direct, practical, solution-oriented tone. Use short paragraphs.
+- Write in active voice. Capitalize product names, acronyms, and proper initialisms.
+- Contractions are allowed. Avoid flexible and scalable; name the specific behavior instead.
+- Avoid free, win, and unlock anywhere in the email. Use no-cost for no-charge offers.
 
-Configured in Brand → Channel guidelines → Email → General. Do not also put these lines in the prompt.
+## Configured in Brand → Channel → Email → Subject line
 
-- Contractions are allowed in email
-- Avoid imprecise, ambiguous language (e.g. “flexible,” “scalable”) in favor of specific terms
-- Avoid “free,” “win,” or “unlock.” Use “no-cost” for no-charge offers
+- 30–50 characters. Put the offer or outcome in the first 30 characters.
+- Start with an action verb such as Get, Start, Explore, or Try. Do not use Unlock, Free, or Win.
+- Align with the main offer in the body. Do not use a trailing period.
 
-### Email Body (GenStudio Brand channel)
+## Configured in Brand → Channel → Email → Preheader
 
-Configured in Brand → Channel guidelines → Email → Body. Do not also put these lines in the prompt.
+- 40–90 characters. Put the extra context in the first 40 characters.
+- Add the outcome or offer the subject line did not state. Do not repeat the subject verbatim.
+- Do not use a trailing period.
 
-- Vary sentence length. Avoid long, information-dense sentences with similar length.
-- Do not start the body with “You.”
-- Max 3 sentences per pod. One idea per sentence. Prioritize outcomes.
+## Configured in Brand → Channel → Email → Headline
+
+- Maximum 8 words. Put the primary outcome in the first 3 words.
+- Lead with the reader outcome; use a product capability only to prove it.
+- Do not use a trailing period.
+
+## Configured in Brand → Channel → Email → Sub-headline
+
+- Maximum 45 characters.
+- Elaborate on the headline promise with a specific outcome or next step.
+- Do not use a trailing period. Question marks are allowed.
+
+## Configured in Brand → Channel → Email → Body
+
+- Maximum 3 sentences per section. One idea per sentence. Prioritize outcomes over product description.
+- Acknowledge a specific operational problem, then give useful guidance. Do not start the first sentence with You.
+- Keep sentences straightforward. Vary sentence length. Avoid long clauses that delay the point.
+
+## Configured in Brand → Channel → Email → Call-to-action
+
+- 2–4 words. Use action verb + object (Start your trial, Explore RHEL).
+- Name a specific action. Do not use Learn more, Click here, or Unlock.
+- Do not use end punctuation.
+
+## Conflicts to watch
+
+| Conflict | Why it matters |
+|----------|----------------|
+| Draft subject example **Unlock** | Channel General bans `unlock`. Never use it as a subject-verb example. |
+| Draft body **75–150 words** | Per-section scoring. Keep 3 sentences per section. |
+| Headline max **8 words** vs template H1 ~35 characters (excluding spaces) | Channel can pass copy the HTML clips. If a template is tighter, match that box. |
+| Tone says **flexibility**; Channel General bans **flexible** / **scalable** | For email prompts, still substitute. See [brand-guidelines.md](brand-guidelines.md). |
 
 ## Supplemental module counts
 
-`Character Count_Template.pdf` lists module max characters **not including spaces** (Subject 40, Preheader 50, H1 35, H2 40, H3 35, Body 500, CTA 25, Secondary CTA 200). Prefer the **Channel Guidelines** table above for GenStudio email prompts unless the user cites the template.
+`Character Count_Template.pdf` lists module max characters **not including spaces** (Subject 40, Preheader 50, H1 35, H2 40, H3 35, Body 500, CTA 25, Secondary CTA 200). Prefer the **Limits** table above for GenStudio Channel and prompts unless the user cites a tighter template.
 
 ## Prompting tip
 
 Encode body limits in pod directives, e.g.:
 
-- `Pod1: In 300-400 characters in a conversational tone…`
+- `Pod1: In 3 sentences maximum…`
 - `Pod2: In 2 sentences maximum…`
 
-Stay within **3 sentences per pod** even when using character targets.
+Stay within **3 sentences per section** even when using a character target (`In 300-400 characters` is still allowed if it stays ≤ 3 sentences).
 
-Do not duplicate Email Body channel guidelines in the prompt. Sentence rhythm and “do not start the body with You” live on the Brand.
+Do not duplicate these Email Channel lists in the prompt. Do not put `Unlock`, `flexible`, `free`, `Learn more`, or `click here` in the prompt.

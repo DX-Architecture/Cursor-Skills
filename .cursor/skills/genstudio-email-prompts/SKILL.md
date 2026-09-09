@@ -46,22 +46,22 @@ Enforce Red Hat channel guidelines in pod directives and when reviewing generate
 
 | Element | Limit |
 |---------|--------|
-| Subject line | 30–40 characters max |
-| Preheader | 40–60 characters |
-| Headline | 30 characters max |
+| Subject line | 30–50 characters; offer in the first 30; verbs Get, Start, Explore, Try—never Unlock |
+| Preheader | 40–90 characters; extra context in the first 40; do not repeat the subject |
+| Headline | Max **8 words**; outcome in the first 3 words |
 | Sub-headline | 45 characters max |
-| Body | Max **3 sentences per pod**; outcomes over description |
-| CTA | 20–25 characters max |
+| Body | Max **3 sentences per section**; outcomes over description; do not start with You |
+| CTA | **2–4 words**; verb + object (Start your trial, Explore RHEL)—never Learn more, Click here, or Unlock |
 
-**Style:** scannable; customer benefit first; active voice; second person when appropriate; Oxford commas; contractions allowed in email; avoid vague words (e.g. “flexible,” “scalable”); entire email—no “free/win/unlock” (use “no-cost”); CTA verbs like Download, Register, Start, Explore, Watch—never “click here.”
+**Style:** short paragraphs; active voice; contractions allowed; avoid `flexible` / `scalable`; entire email—no `free` / `win` / `unlock` (use **no-cost**). Canonical Channel text: [channel-guidelines.md](channel-guidelines.md).
 
-**Body rhythm** (Brand → Channel guidelines → Email → Body—not the prompt): avoid long, information-dense sentences with similar length; do not start the body with “You.” Use these when reviewing generated copy.
+**Body rhythm** (Brand → Channel → Email → Body—not the prompt): 3 sentences per section; one idea per sentence; operational problem then guidance; do not start the first sentence with “You”; vary sentence length. Use when reviewing generated copy.
 
 **Brand voice** (Brand → Tone of voice and Brand values—not the prompt): stability and hybrid cloud engineering; community-driven innovation; practical, no-hype technical voice; operational problem then guidance; Red Hat as enabler. Values: Open, Authentic, Helpful, Brave (no competitor attacks). Canonical text: [brand-guidelines.md](brand-guidelines.md). Do not put Tone’s word `flexibility` in email prompts—Channel still bans `flexible`.
 
 **Brand editorial** (Brand → Editorial guidelines and Editorial restrictions—not the prompt): full product name first in body; approved abbreviations (e.g. RHEL) in subject/headline; Red Hat as “it” or “we/our,” not “they.” Restrictions: no uncited superlatives; no “secure/more secure”; no AI-typical wording (including testament / tapestry); no vague words without a direct object; no “the” before product names. Use when reviewing generated copy. Canonical text: [brand-guidelines.md](brand-guidelines.md).
 
-**In prompts:** bake length into pod lines when helpful, e.g. `Pod1: In 300-400 characters…` or `Pod2: In 2 sentences maximum…` (body still ≤ 3 sentences per pod). Do not paste Email channel field guidelines, Brand voice, Brand values, or Brand editorial lists into the prompt (Parameters already inject them). **Do rewrite the brief** so restricted words never appear in the prompt—GenStudio echoes prompt wording into copy, and Brand score is % of Brand guidelines passed vs tested on that copy. Substitution table: [brand-guidelines.md](brand-guidelines.md).
+**In prompts:** bake length into pod lines when helpful, e.g. `Pod1: In 3 sentences maximum…` or `Pod2: In 2 sentences maximum…` (body still ≤ 3 sentences per section). Do not paste Email Channel, Brand voice, Brand values, or Brand editorial lists into the prompt (Parameters already inject them). **Do rewrite the brief** so restricted words never appear in the prompt—GenStudio echoes prompt wording into copy, and Brand score is % of Brand guidelines passed vs tested on that copy. Substitution table: [brand-guidelines.md](brand-guidelines.md). Never put `Unlock`, `flexible`, `free`, `Learn more`, or `click here` in the prompt.
 
 ## Inputs to collect
 
@@ -137,7 +137,7 @@ Pod2: In [N sentences maximum] focus on [Product B / program] and [specific capa
 1. **Ready-to-paste GenStudio prompt** in a fenced code block
 2. **Parameters checklist**: Brand; Persona; Product(s); single vs multipod; assets per pod
 3. **Assumptions** (only if inferred)—include any restricted-brief rewrites (e.g. “security” → named capabilities)
-4. Optional: remind of subject/preheader/headline/CTA character caps if the user will edit fields manually
+4. Optional: remind of subject (30–50), preheader (40–90), headline (8 words), CTA (2–4 words) if the user will edit fields manually
 
 Do not generate subject lines, headlines, or body copy unless asked.
 
