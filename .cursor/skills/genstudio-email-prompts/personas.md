@@ -35,7 +35,7 @@ Use these when choosing GenStudio Persona Parameters and when shaping prompt ton
 - **Architectural Freedom (Openness & Interoperability)** — Motivated by open-source technologies to avoid vendor lock-in. Seeks flexible platforms that run on any cloud or hardware, bridging siloes and providing a common foundation across dev and ops teams.
 - **Immediate Utility & Automation (Practical Impact)** — Looks for built-in capabilities that streamline day-two operations, accelerate deployment pipelines, and proactively resolve issues before they cause outages.
 
-**Alias:** User briefs saying “Technical Practitioners & Influencers” usually map here (add Champion when advocacy/buying-urgency framing is required).
+**Alias:** User briefs saying “Technical Practitioners & Influencers” usually map here (add Champion when advocacy/buying-urgency framing is required). Briefs saying **Selectors** (tactical choices about which technologies to acquire and use) also map here.
 
 ---
 

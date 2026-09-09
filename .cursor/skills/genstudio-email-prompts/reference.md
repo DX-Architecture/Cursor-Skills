@@ -14,7 +14,7 @@ GenStudio prompts work best with:
 - **Examples** and details not already covered by configured guidelines
 - **Prompt criteria** — Parameters (Brand, Persona, Product) + optional asset + descriptive prompt
 
-If guidelines are selected in Parameters, do not duplicate them in the prompt text.
+If guidelines are selected in Parameters, do not paste those lists into the prompt. Still rewrite the brief so restricted words never appear in prompt text—Create echoes that wording into copy, which Brand validation then scores.
 
 ## Structured prompts (multi-section email)
 
@@ -64,14 +64,16 @@ From Adobe’s agent prompting guidance, apply to GenStudio briefs:
 
 - [ ] Specific about what to do and not do
 - [ ] External/campaign context when useful
-- [ ] Guidelines used in Parameters, not pasted into prompt
+- [ ] Guidelines used in Parameters, not pasted as lists into the prompt
+- [ ] Prompt wording passes brand-score hygiene—no restricted words echoed from the brief or Product value props ([brand-guidelines.md](brand-guidelines.md))
 - [ ] Persona and product from repo lists ([personas.md](personas.md), [products.md](products.md))
 - [ ] Pod names match the email template
 - [ ] One distinct focus per pod
 - [ ] Body ≤ 3 sentences per pod; length encoded in pod directives when useful
 - [ ] Body rhythm (avoid long, information-dense sentences with similar length; do not start the body with “You”) lives in Brand Email Body channel guidelines—not the prompt
-- [ ] Brand voice (tone and values), editorial, and restrictions live in Brand Parameters—not the prompt ([brand-guidelines.md](brand-guidelines.md))
+- [ ] Brand voice (tone and values), editorial, and restrictions live in Brand Parameters; apply substitutions in the prompt rather than pasting the lists
 - [ ] Channel character limits respected ([channel-guidelines.md](channel-guidelines.md))
+- [ ] After a low Brand score, iterate with Content check **Needs review** items as targeted avoidances
 - [ ] Ready to iterate after first generation
 
 ## Red Hat sources
