@@ -1,6 +1,6 @@
 ---
 name: genstudio-email-prompts
-description: Craft Adobe GenStudio for Performance Marketing prompts for Red Hat email experiences—single-product and multipod (Pod1, Pod2+) structured prompts with channel character limits, GenStudio personas, and product guidelines. Use when the user asks for GenStudio prompts, email marketing prompts, multipod emails, pod-based email copy, or GenStudio Create briefings for RHEL, OpenShift Platform Plus, Ansible Automation Platform, Developer program, or product trial.
+description: Craft Adobe GenStudio for Performance Marketing prompts for Red Hat email experiences—single-product and multipod (Pod1, Pod2+) structured prompts with channel character limits, GenStudio personas, product guidelines, and brand-score wording hygiene. Use when the user asks for GenStudio prompts, email marketing prompts, multipod emails, pod-based email copy, GenStudio Create briefings for RHEL, OpenShift Platform Plus, Ansible Automation Platform, Developer program, or product trial, or when generated email scored low on Brand / Content check.
 ---
 
 # GenStudio Email Prompts
@@ -12,6 +12,7 @@ Produce paste-ready prompts for **Adobe GenStudio for Performance Marketing** em
 - User wants a GenStudio prompt for promotional, nurture, or educational email
 - Single product **or** multi-product (multipod) emails using `Pod1`, `Pod2`, etc.
 - Refining a weak prompt into GenStudio’s structured format
+- Generated variants scored low on Brand / Content check and the prompt needs a rewrite
 
 ## Products (GenStudio Parameters)
 
@@ -19,7 +20,7 @@ Use only these product guidelines unless the user specifies another. Full descri
 
 | Product | Notes |
 |---------|--------|
-| **Red Hat Enterprise Linux** | Hybrid OS foundation; lead with why RHEL (not why Linux); hybrid consistency; Lightspeed for ops and security |
+| **Red Hat Enterprise Linux** | Hybrid OS foundation; lead with why RHEL (not why Linux); hybrid consistency; Lightspeed for ops, risk, and compliance outcomes |
 | **Red Hat OpenShift Platform Plus** | Prefer this name (not “OpenShift” alone); hybrid app platform at scale |
 | **Red Hat Ansible Automation Platform** | Prefer this name (not “Ansible” or AAP); enterprise automation at scale; Lightspeed for skills gap, not the whole story |
 | **Red Hat Developer program** | No-cost membership; peer-to-peer; Join / Start building CTAs |
@@ -37,7 +38,7 @@ Select from the GenStudio persona repository (WIP—not exhaustive). Full descri
 | **Technical Practitioner / Architect** | Cloud Architect, DevOps Engineer, SysAdmin, Site Reliability Engineer |
 | **Developer** | Enterprise Software Engineer, Full-Stack Developer, Cloud-Native Developer, Application Architect |
 
-If the user says “Technical Practitioners & Influencers,” map to **Technical Practitioner / Architect** (and Champion when influencer/advocacy framing is needed). Note the assumption.
+If the user says “Technical Practitioners & Influencers,” map to **Technical Practitioner / Architect** (and Champion when influencer/advocacy framing is needed). If they say **Selectors** (tactical acquire-and-use choices), map to **Technical Practitioner / Architect**. Note the assumption.
 
 ## Email channel limits & style
 
@@ -56,11 +57,11 @@ Enforce Red Hat channel guidelines in pod directives and when reviewing generate
 
 **Body rhythm** (Brand → Channel guidelines → Email → Body—not the prompt): avoid long, information-dense sentences with similar length; do not start the body with “You.” Use these when reviewing generated copy.
 
-**Brand voice** (Brand → Tone of voice and Brand values—not the prompt): expert partner; clear, direct, practical; operational problem then guidance; humble, no hype; better way without dismissing current environment. Values: Open, Authentic, Helpful, Brave (no competitor attacks). Canonical text: [brand-guidelines.md](brand-guidelines.md).
+**Brand voice** (Brand → Tone of voice and Brand values—not the prompt): stability and hybrid cloud engineering; community-driven innovation; practical, no-hype technical voice; operational problem then guidance; Red Hat as enabler. Values: Open, Authentic, Helpful, Brave (no competitor attacks). Canonical text: [brand-guidelines.md](brand-guidelines.md). Do not put Tone’s word `flexibility` in email prompts—Channel still bans `flexible`.
 
-**Brand editorial** (Brand → Editorial guidelines and Editorial restrictions—not the prompt): first-use naming; sentence case headlines; numerals; “application” not “app”; Red Hat as “it.” Restrictions: no uncited superlatives; no “secure/more secure”; no AI-typical wording; no vague words used alone; no “the” before product names; no “please” or “click here.” Use when reviewing generated copy. Canonical text: [brand-guidelines.md](brand-guidelines.md).
+**Brand editorial** (Brand → Editorial guidelines and Editorial restrictions—not the prompt): full product name first in body; approved abbreviations (e.g. RHEL) in subject/headline; Red Hat as “it” or “we/our,” not “they.” Restrictions: no uncited superlatives; no “secure/more secure”; no AI-typical wording (including testament / tapestry); no vague words without a direct object; no “the” before product names. Use when reviewing generated copy. Canonical text: [brand-guidelines.md](brand-guidelines.md).
 
-**In prompts:** bake length into pod lines when helpful, e.g. `Pod1: In 300-400 characters…` or `Pod2: In 2 sentences maximum…` (body still ≤ 3 sentences per pod). Do not repeat Email channel field guidelines, Brand voice, or Brand editorial guidelines or restrictions in the prompt.
+**In prompts:** bake length into pod lines when helpful, e.g. `Pod1: In 300-400 characters…` or `Pod2: In 2 sentences maximum…` (body still ≤ 3 sentences per pod). Do not paste Email channel field guidelines, Brand voice, Brand values, or Brand editorial lists into the prompt (Parameters already inject them). **Do rewrite the brief** so restricted words never appear in the prompt—GenStudio echoes prompt wording into copy, and Brand score is % of Brand guidelines passed vs tested on that copy. Substitution table: [brand-guidelines.md](brand-guidelines.md).
 
 ## Inputs to collect
 
@@ -72,10 +73,31 @@ If missing, ask briefly—or infer and note assumptions:
 | **Goal / CTA intent** | Motivate, educate, drive trial, standardize, partner action |
 | **Persona** | Champion, Technical Practitioner / Architect, or Developer |
 | **Product(s)** | From the list above; one per pod when multipod |
-| **Key message / benefits** | Align to persona + product messaging preferences |
+| **Key message / benefits** | Align to persona + product messaging preferences; translate restricted brief language (see brand-score hygiene) |
 | **Tone / do-nots** | Per channel guidelines + any campaign constraints |
+| **Content check failures** | If the user reports a low Brand score, ask for the Content check **Needs review** items (or paste them) |
 
-Brand, Persona, and Product **guidelines** are selected in GenStudio Parameters—do **not** paste full brand guidelines into the prompt.
+Brand, Persona, and Product **guidelines** are selected in GenStudio Parameters—do **not** paste those lists into the prompt.
+
+## Brand-score hygiene
+
+Brand score = guidelines passed ÷ guidelines tested on generated copy ([Brand validation](https://experienceleague.adobe.com/en/docs/genstudio-for-performance-marketing/user-guide/guidelines/brand-validation)). Prompt text is not scored, but Create copies prompt phrases into headlines and body.
+
+**Before outputting a prompt, scan it** (and any product phrases you were about to copy) against the substitution table in [brand-guidelines.md](brand-guidelines.md). Common leaks:
+
+- User said “security / secure / more secure / advanced security” → name capabilities and outcomes (compliance baselines, live kernel patching, Lightspeed-assisted detection and remediation; lower risk, less unplanned downtime). Never put `secure`, `more secure`, `security`, or `security-focused` in the prompt.
+- Product value props in [products.md](products.md) may still say “proactive security” or “more secure.” Those lines are for **Product Parameters**, not for the prompt.
+- Vague words without a direct object (`streamline`, `powerful`, `robust`, `leverage`, `utilize`, `seamless`, `frictionless`) and Channel bans (`flexible`, `flexibility`, `scalable`, `free`, `win`, `unlock`) must not appear in the prompt either.
+- Do not write `the` before a product name.
+
+If the user brief used restricted words, rewrite them in the prompt and list the rewrite under **Assumptions**.
+
+### After a low Brand score
+
+1. Ask for Content check **Needs review** items if not provided.
+2. Rewrite the prompt: remove echoed restricted words; add **only** the failed items as targeted avoidances (Adobe: iterate by asking Create to avoid certain words/themes).
+3. Do not dump the full Brand guideline list into the prompt.
+4. Return the revised paste-ready prompt.
 
 ## Prompt construction rules
 
@@ -83,9 +105,10 @@ Brand, Persona, and Product **guidelines** are selected in GenStudio Parameters�
 2. **Then add section directives** for multipod (`Pod1`, `Pod2`, …).
 3. **Match template section names** — `Pod` (also `Group` / `Section` / `Module` if the template uses those). Case-insensitive.
 4. **Separate name from directive** with `:`, `-`, `;`, etc.: `Pod1: Focus on…`
-5. **Be specific** — audience, purpose, features, benefits, action; include character/sentence caps per pod when useful.
+5. **Be specific** — audience, purpose, features, benefits, action; include character/sentence caps per pod when useful. Use named capabilities and outcomes, not restricted category labels.
 6. **One focus per pod** — distinct product or benefit.
-7. **Iterate** — tighten specifics or name themes/words to avoid.
+7. **Pass brand-score hygiene** — no restricted words in the prompt (see above).
+8. **Iterate** — after Content check failures, add targeted word/theme avoidances only.
 
 ### Single-product
 
@@ -109,7 +132,7 @@ Pod2: In [N sentences maximum] focus on [Product B / program] and [specific capa
 
 1. **Ready-to-paste GenStudio prompt** in a fenced code block
 2. **Parameters checklist**: Brand; Persona; Product(s); single vs multipod; assets per pod
-3. **Assumptions** (only if inferred)
+3. **Assumptions** (only if inferred)—include any restricted-brief rewrites (e.g. “security” → named capabilities)
 4. Optional: remind of subject/preheader/headline/CTA character caps if the user will edit fields manually
 
 Do not generate subject lines, headlines, or body copy unless asked.

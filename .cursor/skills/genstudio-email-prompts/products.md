@@ -3,6 +3,8 @@
 Source: `GenStudio Products.txt` (exported product guidelines)  
 Use these when choosing GenStudio **Product** Parameters and when shaping pod focus, benefits, and messaging.
 
+**Prompts vs Parameters:** Product fields below may still say “secure,” “more secure,” or “proactive security.” Those lines belong in **Product Parameters**, not in the email prompt. Translate to named capabilities and outcomes before writing a prompt. See [brand-guidelines.md](brand-guidelines.md).
+
 ---
 
 ## Red Hat Enterprise Linux
