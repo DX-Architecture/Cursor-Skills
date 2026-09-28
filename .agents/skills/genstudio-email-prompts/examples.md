@@ -112,3 +112,42 @@ Pod2: In 2 sentences maximum promote a no-cost Red Hat product trial with full s
 ```
 
 **Parameters:** Persona = Technical Practitioner / Architect; Products = Red Hat Enterprise Linux + Red Hat product trial; multipod.
+
+---
+
+## Example 6 — Technical copywriter (RHEL + Lightspeed, single section)
+
+**Persona:** Developer + Technical Practitioner / Architect (Developers, SysAdmins, DevOps, Technical Influencers)  
+**Product:** Red Hat Enterprise Linux (Lightspeed + stack remediation path)  
+**Theme:** Simplify Tasks. Amplify Results.
+
+Proven shape from a high-performing brief. Restricted wording rewritten for brand-score hygiene (`seamless` → works across).
+
+**Prompt:**
+
+```
+Act as a Principal Technical Copywriter specializing in enterprise IT solutions. Write a concise promotional email tailored for Developers, Systems Administrators, DevOps Engineers, and Technical Influencers.
+
+Core objective:
+Show how Red Hat Enterprise Linux and Red Hat Lightspeed identify vulnerabilities and performance bottlenecks before they cause downtime, and how that guidance works across Red Hat Enterprise Linux, Red Hat Satellite, and Red Hat Ansible Automation Platform. Frame operational friction and talent shortages as solvable with built-in AI assistance.
+
+Body:
+Length: Strictly 300–400 characters total.
+Theme: “Simplify Tasks. Amplify Results.”
+Key points:
+- Position Red Hat Lightspeed as assistance for operational friction and talent shortages.
+- Explain how Lightspeed identifies vulnerabilities and performance bottlenecks before downtime occurs.
+- Mention operating with predictive analytics to identify and remediate risks.
+- Highlight build, operate, and protect tasks across Red Hat Enterprise Linux, Red Hat Satellite, and Red Hat Ansible Automation Platform, including migration from CentOS Linux.
+End with a concluding statement that lands the outcome or next step (still within 300–400 characters and ≤ 3 sentences).
+
+Tone: Direct, authoritative, developer-friendly. Avoid high-level marketing jargon.
+
+Subject line: Align with the core offer in the body. Do not end with a period.
+Preheader: 40–90 characters. Clear positive outcome. Do not repeat the subject verbatim. Do not end with a period.
+Headline: Maximum 8 words. Specific to proactive IT management or AI-assisted operations. Do not end with a period.
+Subheadline: Maximum 45 characters. Do not end with a period.
+```
+
+**Parameters:** Personas = Developer and/or Technical Practitioner / Architect; Product = Red Hat Enterprise Linux; single-section template (Create fills subject/preheader/headline/subheadline from the field-craft block).  
+**Assumptions:** Satellite and Ansible Automation Platform are stack context for the remediation path, not separate Product Parameters unless the template is multipod.

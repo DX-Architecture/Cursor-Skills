@@ -12,7 +12,7 @@ Optimized for GenStudio Content check: one job per line, one max per field, no b
 | **Preheader** | 40–90 characters | Extra context in the first 40 characters; do not repeat the subject; no trailing period |
 | **Headline** | Max 8 words | Primary outcome in the first 3 words; capability only as proof; no trailing period |
 | **Sub-headline** | 45 characters max | Elaborate the headline promise; no trailing period; question marks allowed |
-| **Body** | Max **3 sentences per section** | One idea per sentence; outcomes over description; do not start the first sentence with You |
+| **Body** | Max **3 sentences per section** | One idea per sentence; outcomes over description; do not start the first sentence with You; end with a concluding statement |
 | **CTA** | **2–4 words** | Action verb + object (Start your trial, Explore RHEL); never Learn more, Click here, or Unlock; no end punctuation |
 
 Do not use a 75–150 word body target in Channel or in prompts. GenStudio scores each Body field; that range over-generates multipod sections and fails short 3-sentence pods.
@@ -52,6 +52,7 @@ Do not use a 75–150 word body target in Channel or in prompts. GenStudio score
 
 - Maximum 3 sentences per section. One idea per sentence. Prioritize outcomes over product description.
 - Acknowledge a specific operational problem, then give useful guidance. Do not start the first sentence with You.
+- End with a concluding statement that lands the outcome or next step—do not leave the body as an open feature list.
 - Keep sentences straightforward. Vary sentence length. Avoid long clauses that delay the point.
 
 ## Configured in Brand → Channel → Email → Call-to-action
@@ -77,9 +78,9 @@ Do not use a 75–150 word body target in Channel or in prompts. GenStudio score
 
 Encode body limits in pod directives, e.g.:
 
-- `Pod1: In 3 sentences maximum…`
+- `Pod1: In 300-400 characters…` or `Pod1: In 3 sentences maximum…`
 - `Pod2: In 2 sentences maximum…`
 
-Stay within **3 sentences per section** even when using a character target (`In 300-400 characters` is still allowed if it stays ≤ 3 sentences).
+Stay within **3 sentences per section** even when using a character target (`In 300-400 characters` is still allowed if it stays ≤ 3 sentences). Prefer **Strictly 300–400 characters** for single-section technical emails (see Technical copywriter pattern in [SKILL.md](SKILL.md)).
 
-Do not duplicate these Email Channel lists in the prompt. Do not put `Unlock`, `flexible`, `free`, `Learn more`, or `click here` in the prompt.
+Do not paste the full Email Channel lists into the prompt. For Create-generated subject/preheader/headline/subheadline, a short field-craft block is allowed (align subject to body offer; preheader 40–90 with positive outcome and no subject repeat; headline max 8 words; subheadline max 45; no trailing periods). Do not put `Unlock`, `flexible`, `free`, `Learn more`, or `click here` in the prompt.

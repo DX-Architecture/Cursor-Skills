@@ -38,7 +38,7 @@ Select from the GenStudio persona repository (WIP—not exhaustive). Full descri
 | **Technical Practitioner / Architect** | Cloud Architect, DevOps Engineer, SysAdmin, Site Reliability Engineer |
 | **Developer** | Enterprise Software Engineer, Full-Stack Developer, Cloud-Native Developer, Application Architect |
 
-If the user says “Technical Practitioners & Influencers,” map to **Technical Practitioner / Architect** (and Champion when influencer/advocacy framing is needed). If they say **Selectors** (tactical acquire-and-use choices), map to **Technical Practitioner / Architect**. Note the assumption.
+If the user says “Technical Practitioners & Influencers,” map to **Technical Practitioner / Architect** (and Champion when influencer/advocacy framing is needed). If they say “Developers and Technical Influencers,” map to **Developer** + **Technical Practitioner / Architect**. If they say **Selectors** (tactical acquire-and-use choices), map to **Technical Practitioner / Architect**. Note the assumption.
 
 ## Email channel limits & style
 
@@ -50,18 +50,18 @@ Enforce Red Hat channel guidelines in pod directives and when reviewing generate
 | Preheader | 40–90 characters; extra context in the first 40; do not repeat the subject |
 | Headline | Max **8 words**; outcome in the first 3 words |
 | Sub-headline | 45 characters max |
-| Body | Max **3 sentences per section**; outcomes over description; do not start with You |
+| Body | Max **3 sentences per section**; outcomes over description; do not start with You; end with a concluding statement |
 | CTA | **2–4 words**; verb + object (Start your trial, Explore RHEL)—never Learn more, Click here, or Unlock |
 
 **Style:** short paragraphs; active voice; contractions allowed; avoid `flexible` / `scalable`; entire email—no `free` / `win` / `unlock` (use **no-cost**). Canonical Channel text: [channel-guidelines.md](channel-guidelines.md).
 
-**Body rhythm** (Brand → Channel → Email → Body—not the prompt): 3 sentences per section; one idea per sentence; operational problem then guidance; do not start the first sentence with “You”; vary sentence length. Use when reviewing generated copy.
+**Body rhythm** (Brand → Channel → Email → Body—not the prompt): 3 sentences per section; one idea per sentence; operational problem then guidance; do not start the first sentence with “You”; end with a concluding statement that lands the outcome or next step; vary sentence length. Use when reviewing generated copy.
 
 **Brand voice** (Brand → Tone of voice and Brand values—not the prompt): stability and hybrid cloud engineering; community-driven innovation; practical, no-hype technical voice; operational problem then guidance; Red Hat as enabler. Values: Open, Authentic, Helpful, Brave (no competitor attacks). Canonical text: [brand-guidelines.md](brand-guidelines.md). Do not put Tone’s word `flexibility` in email prompts—Channel still bans `flexible`.
 
 **Brand editorial** (Brand → Editorial guidelines and Editorial restrictions—not the prompt): full product name first in body; approved abbreviations (e.g. RHEL) in subject/headline; Red Hat as “it” or “we/our,” not “they.” Restrictions: no uncited superlatives; no “secure/more secure”; no AI-typical wording (including testament / tapestry); no vague words without a direct object; no “the” before product names; no unqualified “the cloud” or “the edge” (use hybrid cloud, edge computing, edge device). Use when reviewing generated copy. Canonical text: [brand-guidelines.md](brand-guidelines.md).
 
-**In prompts:** bake length into pod lines when helpful, e.g. `Pod1: In 3 sentences maximum…` or `Pod2: In 2 sentences maximum…` (body still ≤ 3 sentences per section). Do not paste Email Channel, Brand voice, Brand values, or Brand editorial lists into the prompt (Parameters already inject them). **Do rewrite the brief** so restricted words never appear in the prompt—GenStudio echoes prompt wording into copy, and Brand score is % of Brand guidelines passed vs tested on that copy. Substitution table: [brand-guidelines.md](brand-guidelines.md). Never put `Unlock`, `flexible`, `free`, `Learn more`, `click here`, `the cloud`, or `the edge` in the prompt.
+**In prompts:** bake length into pod lines when helpful, e.g. `Pod1: In 300-400 characters…` or `Pod2: In 2 sentences maximum…` (body still ≤ 3 sentences per section). Do not paste full Email Channel, Brand voice, Brand values, or Brand editorial lists into the prompt (Parameters already inject them). For single-product emails where Create also fills subject/preheader/headline/subheadline, add a short **field-craft block** (see Technical copywriter pattern)—limits and no-trailing-period rules only, not the full Channel dump. **Do rewrite the brief** so restricted words never appear in the prompt—GenStudio echoes prompt wording into copy, and Brand score is % of Brand guidelines passed vs tested on that copy. Substitution table: [brand-guidelines.md](brand-guidelines.md). Never put `Unlock`, `flexible`, `free`, `Learn more`, `click here`, `the cloud`, `the edge`, or `seamless` in the prompt.
 
 ## Inputs to collect
 
@@ -74,7 +74,8 @@ If missing, ask briefly—or infer and note assumptions:
 | **Persona** | Champion, Technical Practitioner / Architect, or Developer |
 | **Product(s)** | From the list above; one per pod when multipod |
 | **Key message / benefits** | Align to persona + product messaging preferences; translate restricted brief language (see brand-score hygiene) |
-| **Tone / do-nots** | Per channel guidelines + any campaign constraints |
+| **Theme** | Optional campaign line (e.g. “Simplify Tasks. Amplify Results.”)—put in Body directives when supplied |
+| **Tone / do-nots** | Per channel guidelines + any campaign constraints; default technical audiences to developer-friendly, no marketing jargon |
 | **Content check failures** | If the user reports a low Brand score, ask for the Content check **Needs review** items (or paste them) |
 
 Brand, Persona, and Product **guidelines** are selected in GenStudio Parameters—do **not** paste those lists into the prompt.
@@ -114,13 +115,49 @@ Structured prompts give the LLM field-specific instructions. Use them for multi-
 
 If the structure pattern is not followed, GenStudio treats the prompt as **global** and applies it to all sections, which usually reduces performance.
 
-### Single-product
+### Technical copywriter pattern (preferred for Developer / practitioner emails)
+
+Proven shape when briefs ask for persuasive technical email, Lightspeed/ops outcomes, or developer-friendly tone. Prefer this over the bare single-product one-liner for those audiences. Full worked example: [examples.md](examples.md) Example 6.
+
+```
+Act as a Principal Technical Copywriter specializing in enterprise IT solutions. Write a concise promotional email tailored for [persona / role list].
+
+Core objective:
+[Product + outcome in one or two sentences—named capabilities, not restricted category labels.]
+
+Body:
+Length: Strictly 300–400 characters total.
+Theme: “[campaign theme if supplied]”
+Key points:
+- [capability / outcome 1]
+- [capability / outcome 2]
+- […]
+End with a concluding statement that lands the outcome or next step (still within the character budget and ≤ 3 sentences).
+
+Tone: Direct, authoritative, developer-friendly. Avoid high-level marketing jargon.
+
+Subject line: Align with the core offer in the body. Do not end with a period.
+Preheader: 40–90 characters. Clear positive outcome. Do not repeat the subject verbatim. Do not end with a period.
+Headline: Maximum 8 words. Specific to [brief outcome domain]. Do not end with a period.
+Subheadline: Maximum 45 characters. Do not end with a period.
+```
+
+**Pattern rules:**
+- Map “Developers and Technical Influencers” → **Developer** + **Technical Practitioner / Architect** (Champion only if advocacy framing is needed).
+- Keep Body at **300–400 characters** and still ≤ 3 sentences.
+- Require the body to **end with a concluding statement** (outcome or next step)—not a dangling feature list.
+- Put campaign themes under Body, not as a separate brand dump.
+- Field-craft block is for Create-generated subject/preheader/headline/subheadline. Do not invent copy for those fields unless asked—only craft rules.
+- Stack mentions (Satellite, Ansible Automation Platform) only when the brief is about the remediation path; if RHEL is the only Product Parameter, do not make Satellite/Ansible the lead story ([products.md](products.md)).
+- Still run brand-score hygiene (`seamless` → works across / built-in; `secure`/`security` → named capabilities and outcomes).
+
+### Single-product (short form)
 
 ```
 Write a promotional email to motivate [persona] to [goal] using [Product]. Highlight [key capabilities / benefits]. Encourage [desired action].
 ```
 
-For single-pod templates, you may still use `Pod1:` with a length constraint (see [examples.md](examples.md)).
+For single-pod templates, prefer `Pod1: In 300-400 characters…` or the Technical copywriter pattern above (see [examples.md](examples.md)).
 
 ### Multipod
 
@@ -131,6 +168,8 @@ Pod1: In [N characters / N sentences] [tone], focus on [Product A] and [specific
 
 Pod2: In [N sentences maximum] focus on [Product B / program] and [specific capability / benefit].
 ```
+
+For multipod, keep the Principal Technical Copywriter lead and developer-friendly tone when the audience is technical; put length/theme/key points on each `PodN:` line instead of one global Body block.
 
 ## Output format
 
