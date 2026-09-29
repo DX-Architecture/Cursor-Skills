@@ -149,3 +149,37 @@ User briefs saying “OpenShift” or “Red Hat OpenShift” usually map to **R
 ### Naming aliases
 
 User briefs saying “Ansible,” “AAP,” “Ansible Tower,” or “Ansible Automation” usually map to **Red Hat Ansible Automation Platform** unless they name community Ansible, Ansible Core, or AWX.
+
+---
+
+## Red Hat partner ecosystem
+
+**Description:** Red Hat partner ecosystem is an open innovation community that connects partners with shared resources, expertise, software, and co-creation opportunities. It is for build, sell, and service partners who need multiple paths to partner with Red Hat, grow revenue, and deliver complete solutions to customers across hybrid cloud.
+
+**Value proposition:**
+
+- Gives partners access to Red Hat training, playbooks, software, and shared partner knowledge so teams build skills and stay current without relying only on in-house expertise.
+- Enables joint offerings and collaboration with Red Hat and fellow partners—so partners deliver complete solutions, differentiate in the market, and open new channels.
+- Helps partners expand reach, bring customer-centric offerings to market, and grow revenue with program support that can adapt as business models change.
+- Supports partners through the sales process with transparency and collaboration—not a one-time signup, but ongoing engagement across the partner life cycle.
+- Anchors partnership in open hybrid cloud: open source, open standards, and open APIs—so partners innovate across on-premises, public cloud, and the edge of the network with customer choice.
+- Positions Red Hat as the partner of choice when partners compare ecosystems: community-driven co-creation, brand affinity from open source leadership, and multiple paths to engage rather than a single rigid program track.
+
+**Messaging preferences:**
+
+- Lead with why partner with Red Hat—not why have a partner program. Speak to partners choosing among Red Hat and competitors.
+- Use the brand line “a dynamic partner community creating customer success,” supported by “open innovation ecosystem.”
+- Anchor messaging on Access, Collaborate, and Accelerate. Lead with partner outcomes; use capabilities only to prove those outcomes.
+- For Business Development (Sales Directors, Alliance Managers), stress joint solutions, new channels, and collaboration through the sales process.
+- For Line of Business and executives (Practice Leads, VPs, CxOs), stress strategic partnerships, deeper capabilities, and faster path to customer outcomes.
+- For partner developers, stress hybrid cloud foundations, supported proofs of concept, skills growth, and certified tools.
+- Frame as an ecosystem that adapts as the partner’s business changes and welcomes existing partner relationships.
+- Emphasize co-creation with Red Hat and fellow partners—not only bilateral deals with Red Hat.
+- Compete on openness, community, choice of path, and customer success. Do not attack named competitors.
+- Do not use this product to promote RHEL, OpenShift Platform Plus, or Ansible Automation Platform; those stay separate Product parameters.
+- Use Red Hat partner ecosystem on first mention, then partner ecosystem. Do not invent short forms such as RHPE.
+- Keep tone clear, direct, and practical. Prefer named outcomes over uncited superlatives.
+
+### Naming aliases
+
+User briefs saying “to partner,” “partner ecosystem,” “partner program,” “RHPE,” or “Red Hat (To) Partner” usually map to **Red Hat partner ecosystem**. Do not map through-partner / for-partner end-customer campaigns to this product unless the brief is about the partner relationship itself.

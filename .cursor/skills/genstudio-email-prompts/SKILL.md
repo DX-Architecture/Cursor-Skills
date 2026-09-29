@@ -1,6 +1,6 @@
 ---
 name: genstudio-email-prompts
-description: Craft Adobe GenStudio for Performance Marketing prompts for Red Hat email experiences—single-product and multipod (Pod1, Pod2+) structured prompts with channel character limits, GenStudio personas, product guidelines, and brand-score wording hygiene. Use when the user asks for GenStudio prompts, email marketing prompts, multipod emails, pod-based email copy, GenStudio Create briefings for RHEL, OpenShift Platform Plus, Ansible Automation Platform, Developer program, or product trial, or when generated email scored low on Brand / Content check.
+description: Craft Adobe GenStudio for Performance Marketing prompts for Red Hat email experiences—single-product and multipod (Pod1, Pod2+) structured prompts with channel character limits, GenStudio personas, product guidelines, and brand-score wording hygiene. Use when the user asks for GenStudio prompts, email marketing prompts, multipod emails, pod-based email copy, GenStudio Create briefings for RHEL, OpenShift Platform Plus, Ansible Automation Platform, Developer program, product trial, or partner ecosystem, or when generated email scored low on Brand / Content check.
 ---
 
 # GenStudio Email Prompts
@@ -25,8 +25,9 @@ Use only these product guidelines unless the user specifies another. Full descri
 | **Red Hat Ansible Automation Platform** | Prefer this name (not “Ansible” or AAP); enterprise automation at scale; Lightspeed for skills gap, not the whole story |
 | **Red Hat Developer program** | No-cost membership; peer-to-peer; Join / Start building CTAs |
 | **Red Hat product trial** | No-cost, typically 60-day, full-subscription-value evaluation—not production; not the Developer program |
+| **Red Hat partner ecosystem** | To-partner offer; open innovation community; Access / Collaborate / Accelerate; partner of choice—not end-customer product stories |
 
-Map each pod to one product/offer focus when possible. Briefs that say “OpenShift” map to **Red Hat OpenShift Platform Plus** unless another edition is named. Briefs that say “Ansible” map to **Red Hat Ansible Automation Platform** unless they name community Ansible, Ansible Core, or AWX.
+Map each pod to one product/offer focus when possible. Briefs that say “OpenShift” map to **Red Hat OpenShift Platform Plus** unless another edition is named. Briefs that say “Ansible” map to **Red Hat Ansible Automation Platform** unless they name community Ansible, Ansible Core, or AWX. Briefs that say “to partner,” “partner ecosystem,” or “Red Hat (To) Partner” map to **Red Hat partner ecosystem**.
 
 ## Personas (GenStudio Parameters)
 
@@ -196,4 +197,4 @@ Preserve ®/™ when the user supplies them (e.g. `Red Hat® Enterprise Linux®`
 
 Local brand PDFs (gitignored): `Red Hat Style and Brand/Red Hat_Channel Guidelines.pdf`, `Red Hat Style and Brand/Persona.pdf`, `Red Hat Style and Brand/Prompt Examples.pdf`  
 Personas source: [GenStudio Personas_WIP](https://docs.google.com/document/d/1Zbqq5GNc5SZ9wwdA6sq8PMuLaeYA0R4i-NsxZ66k5TA/edit?usp=sharing) → [personas.md](personas.md)  
-Products source: [GenStudio Products](https://docs.google.com/document/d/1SBPVonkB1fq5vjLSOOp2NCDu1ZonZcKRsvoNyx0KkYk/edit?usp=sharing) (`GenStudio Products.txt`) → [products.md](products.md)
+Products source: [GenStudio Products](https://docs.google.com/document/d/1SBPVonkB1fq5vjLSOOp2NCDu1ZonZcKRsvoNyx0KkYk/edit?usp=sharing) (`GenStudio Products.txt`) → [products.md](products.md); partner ecosystem also informed by Red Hat Partner Ecosystem Messaging Guide (April 2022)
