@@ -1,0 +1,5 @@
+# Local mirrors / exports from Google Drive — do not commit
+.venv/
+GenStudio-Products-live.txt
+GenStudio-Products-live-extracted.txt
+*.docx

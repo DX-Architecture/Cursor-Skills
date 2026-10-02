@@ -1,6 +1,6 @@
 ---
 name: genstudio-email-prompts
-description: Craft Adobe GenStudio for Performance Marketing prompts for Red Hat email experiences—single-product and multipod (Pod1, Pod2+) structured prompts with channel character limits, GenStudio personas, product guidelines, and brand-score wording hygiene. Use when the user asks for GenStudio prompts, email marketing prompts, multipod emails, pod-based email copy, GenStudio Create briefings for RHEL, OpenShift Platform Plus, Ansible Automation Platform, Developer program, or product trial, or when generated email scored low on Brand / Content check.
+description: Craft Adobe GenStudio for Performance Marketing prompts for Red Hat email experiences—single-product and multipod (Pod1, Pod2+) structured prompts with channel character limits, GenStudio personas, product guidelines, and brand-score wording hygiene. Use when the user asks for GenStudio prompts, email marketing prompts, multipod emails, pod-based email copy, GenStudio Create briefings for RHEL, OpenShift Platform Plus, OpenShift Dedicated, Ansible Automation Platform, Developer program, product trial, Lightwell, or Red Hat Partner (To-Partner), or when generated email scored low on Brand / Content check.
 ---
 
 # GenStudio Email Prompts
@@ -20,13 +20,16 @@ Use only these product guidelines unless the user specifies another. Full descri
 
 | Product | Notes |
 |---------|--------|
+| **Red Hat Lightwell** | Joint Red Hat + IBM initiative; Lightwell Network vs Clearinghouse Premier; annual subscription for open source dependency remediations |
 | **Red Hat Enterprise Linux** | Hybrid OS foundation; lead with why RHEL (not why Linux); hardened foundation and closed-loop remediation; hybrid consistency; Lightspeed for ops, risk, and compliance outcomes |
-| **Red Hat OpenShift Platform Plus** | Prefer this name (not “OpenShift” alone); hybrid app platform at scale |
+| **Red Hat OpenShift Platform Plus** | Prefer this name (not “OpenShift” alone); self-managed hybrid app platform at scale |
+| **Red Hat OpenShift Dedicated** | Fully managed OpenShift on public cloud; map only when Dedicated / managed OpenShift is named |
 | **Red Hat Ansible Automation Platform** | Prefer this name (not “Ansible” or AAP); enterprise automation at scale; Lightspeed for skills gap, not the whole story |
 | **Red Hat Developer program** | No-cost membership; peer-to-peer; Join / Start building CTAs |
 | **Red Hat product trial** | No-cost, typically 60-day, full-subscription-value evaluation—not production; not the Developer program |
+| **Red Hat Partner (To-Partner)** | Partner ecosystem for build/sell/service partners; Access, Collaborate, Accelerate; not through-partner end-customer campaigns |
 
-Map each pod to one product/offer focus when possible. Briefs that say “OpenShift” map to **Red Hat OpenShift Platform Plus** unless another edition is named. Briefs that say “Ansible” map to **Red Hat Ansible Automation Platform** unless they name community Ansible, Ansible Core, or AWX.
+Map each pod to one product/offer focus when possible. Briefs that say “OpenShift” map to **Red Hat OpenShift Platform Plus** unless another edition is named (for example **Red Hat OpenShift Dedicated**). Briefs that say “Ansible” map to **Red Hat Ansible Automation Platform** unless they name community Ansible, Ansible Core, or AWX. Briefs that say “to partner,” “partner ecosystem,” or “Red Hat (To) Partner” map to **Red Hat Partner (To-Partner)**.
 
 ## Personas (GenStudio Parameters)
 
